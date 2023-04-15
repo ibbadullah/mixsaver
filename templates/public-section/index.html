@@ -1,0 +1,840 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+{% load static %}
+{% load filters %}
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Online Deals & Promos Website - Mixsaver</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- SEO tags -->
+    <meta name="keywords" content="amazon coupon codes,best coupon code website,daily deals website,aliexpress promo codes">
+    <meta name="description" content="Get working coupon codes and deals of all big & small brands. Shop today and save big.">
+    <meta name="author" content="Mixsaver">
+    <meta name="robots" content="index,follow">
+
+    <!-- OG open graph tags for facebook -->
+    <meta property="og:title" content="Online Deals & Promos Website - Mixsaver">
+    <meta property="og:description" content="Get working coupon codes and deals of all big & small brands. Shop today and save big.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mixsaver.com">
+
+
+    <meta property="og:image" content="https://mixsaver.com{% static 'public-section/imagesANDicons/mixsaver-logo-2.png' %}">
+
+
+    <meta property="og:site_name" content="Mixsaver">
+
+    <!-- Twitter tags -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Online Deals & Promos Website - Mixsaver">
+    <meta property="twitter:description" content="Get working coupon codes and deals of all big & small brands. Shop today and save big.">
+
+    <meta property="twitter:image" content="https://mixsaver.com{% static 'public-section/imagesANDicons/mixsaver-logo-2.png' %}">
+
+
+
+
+    <link rel="canonical" href="https://mixsaver.com">
+    
+   
+<meta name="fo-verify" content="12566ea9-1c39-4603-9c3f-a8cb5a42c235">
+
+
+<meta name="verifyownership" 
+ content="b1d456a06d18c47475348f61240e05f9"/>
+
+
+    <!-- Bootstrap and fontawesome -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="shortcut icon" href="https://mixsaver.com{% static 'public-section/imagesANDicons/mixsaver.ico' %}" type="image/x-icon" />
+
+
+    <!-- Index css -->
+    <link rel="stylesheet" href="{% static 'public-section/styles/index.css' %}">
+
+    <!-- Horizontal scroll products library -->
+    <link rel="stylesheet" href="{% static 'public-section/other_libaries/coursel/coursel.css' %}">
+    
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q5G8Q4ZQX0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-Q5G8Q4ZQX0');
+    </script>
+    
+
+
+
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script>
+      /*Function will show total services in style*/
+    jQuery(document).ready(function( $ ) {
+        $('.counts').counterUp({
+            delay: 10,
+            time: 1000
+        });
+    });
+  </script>
+
+
+  <script data-ad-client="ca-pub-1804052143915893" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+
+</head>
+<body>
+
+
+
+
+
+
+  <div class="container-fluid fixed-top" id="header">
+
+<nav class="navbar navbar-expand-lg">
+
+  <a class="navbar-brand" href="#header-section"><img src="{% static 'public-section/imagesANDicons/logo.png'%}" alt="Logo not found"></a>
+  <button style="text-align: center" class="navbar-toggler menuIcon" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon">
+        <i style="color: white;font-size: 34px;" class="fa fa-align-justify" aria-hidden="true" id="mobileMenuIcon"></i>
+        <i style="display:none;color: white;font-size: 34px;" class="fa fa-close" aria-hidden="true" id="mobileMenuCloseIcon"></i>
+    </span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav align-center ml-auto mr-auto">
+      <li class="nav-item d-flex main-menu">
+        <a class="nav-link p-2" href="#header-section">Home</a>
+      </li>
+      <li class="nav-item d-flex main-menu">
+        <a class="nav-link p-2" href="#topdeals">Today Top Deals</a>
+      </li>
+
+      <li class="nav-item d-flex main-menu">
+        <a class="nav-link p-2" href="#hotdeals">Hot Deals</a>
+      </li>
+
+
+        <li class="nav-item dropdown">
+        <a class="nav-link p-2 dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Trending Deals
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+            <a class="dropdown-item" href="#amazondeals">Amazon</a>
+
+            <a class="dropdown-item" href="#aliexpressdeals">Aliexpress</a>
+          <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="{% url 'BrandAllProducts' 'amazon' %}">Explore more brands</a>
+        </div>
+       </li>
+
+
+         <li class="nav-item dropdown">
+        <a class="nav-link p-2 dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Coupons
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            {% for brand in AllBrands %}
+                <a class="dropdown-item" href="{% url 'BrandAllProducts' brand.BrandSlug %}">{{ brand.BrandName }}</a>
+            {% endfor %}
+        </div>
+       </li>
+
+
+
+
+      <li class="nav-item d-flex main-menu">
+        <a class="nav-link p-2" href="#brands">Brands</a>
+      </li>
+
+      <li class="nav-item d-flex main-menu">
+        <a class="nav-link p-2" href="{% url 'BlogView' %}">Blog</a>
+      </li>
+
+    {% if request.user.is_authenticated %}
+
+         <li class="nav-item dropdown">
+          <a class="nav-link p-2 dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          {{ request.user.first_name|decrypt:request.user.first_name }}
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{% url 'DashboardView' %}">Dashboard</a>
+            <a class="dropdown-item" href="{% url 'MyDeals' %}">My Deals</a>
+            <a class="dropdown-item" href="{% url 'Settings' %}">Settings</a>
+          <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="{% url 'LogoutUser' %}">Logout</a>
+        </div>
+       </li>
+        {% else %}
+    </ul>
+
+        <a class="btn my-2 my-sm-0 d-flex justify-content-center" id="loginBtn" href="{% url 'LoginView' %}">Login</a>
+        &nbsp;&nbsp;
+        <a class="btn my-2 my-sm-0 d-flex justify-content-center" id="signupBtn" href="{% url 'SignUpView' %}">Sign Up</a>
+       {% endif %}
+  </div>
+</nav>
+  </div>
+
+
+
+
+
+
+
+<!-- header section start-->
+<section class="container-fluid header-section" id="header-section" >
+<div class="row">
+    <h1>Get working promo codes of all the big brands</h1>
+    <div class="formDiv">
+    <form method="get" action="#">
+        <div class="keywordDiv">
+            <input type="text" id="userQuery" class="keyword" placeholder="Search for promo">
+        </div>
+         <input type="text" name="category" value="all" hidden>
+        <div class="selectDiv">
+            <select id="brandSlug" class="selectBrand form-control" required>
+            <option disabled selected>Select brand</option>
+                {% for brand in AllBrands %}
+                    <option value="{{ brand.BrandSlug }}">{{ brand.BrandName }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="searchButtonDiv">
+            <button type="button" onclick="formRedirect()" class="searchBtn">Search</button>
+        </div>
+    <!-- Using javascript for redirecting the form on dynamix search view -->
+    <script>
+        function formRedirect(){
+            let brandSlug = document.getElementById('brandSlug').value;
+            let userQuery = document.getElementById('userQuery').value;
+            let fullUrl = "deals/"+brandSlug+"/?category=all"+"&q="+userQuery;
+            if (userQuery == "")
+            {
+                window.alert("Please write your query in the input box.");
+            }
+            else if (brandSlug == "Select brand"){
+
+                window.alert("Please select brand.");
+            }
+            else {
+                redirect = window.open(fullUrl,'_self');
+                return redirect;
+            }
+
+        }
+
+
+    </script>
+
+
+    </form>
+
+</div>
+
+        </div>
+
+
+
+
+
+    <div class="row three-benefits" >
+        <div class="container-fluid d-flex justify-content-center" >
+            <div class="col-md-4">
+                <i class="fa fa-check" aria-hidden="true"></i>
+                <h5>Verified Promos</h5>
+                <br>
+                <p>Get verified promos</p>
+            </div>
+
+
+            <div class="col-md-4">
+                <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+                <h5>Low Prices Guaranteed</h5>
+                <br>
+                <p>Get things at cheap rates</p>
+            </div>
+
+
+            <div class="col-md-4">
+                <i class="fa fa-usd" aria-hidden="true"></i>
+                <h5>Big Discounts</h5>
+                <br>
+                <p>Save big on all big brands</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- header section end-->
+
+
+<!-- Services section start-->
+<section class="cardsContainer" id="topdeals">
+
+    <h2 class="sectionTitle">Today Top Deals</h2><br>
+
+    <div class="container">
+
+         <div class="carousel" data-flickity='{ "groupCells": true }'>
+         {% for data in TenTrendingDeals %}
+             <div class="carousel-cell">
+
+             <div class="productImgDiv">
+                 {% if data.CouponProductTotalRating > 500 %}
+                        <span class="badge">Best Seller</span>
+                 {% endif %}
+                 <img src="{{ data.CouponProductImage.url }}" alt="Product image not found.">
+             </div>
+
+             <div class="titleAndCateg">
+                 <a href="#"><h4>{{ data.CouponProductTitle|truncatechars:15 }}</h4></a>
+                 <p class="categeory"><i class="fa fa-check-circle"></i>&nbsp;Coupon verified</p>
+             </div>
+
+             <div class="ratingDiv">
+                 <p class="ratingP">{{ data.CouponProductRating }}</p>
+                 {% if data.CouponProductRating >= 1.0 and data.CouponProductRating < 1.5 %}
+                     <img class="ratingImage" src="{% static 'public-section/imagesANDicons/ratings/1.PNG' %}" alt="Rating image not found.">
+                 {% elif data.CouponProductRating >= 1.5 and data.CouponProductRating < 2.0 %}
+                     <img class="ratingImage" src="{% static 'public-section/imagesANDicons/ratings/1-5.PNG' %}" alt="Rating image not found.">
+                 {% elif data.CouponProductRating >= 2.0 and data.CouponProductRating < 2.5 %}
+                     <img class="ratingImage" src="{% static 'public-section/imagesANDicons/ratings/2.PNG' %}" alt="Rating image not found.">
+                 {% elif data.CouponProductRating >= 2.5 and data.CouponProductRating < 3.0 %}
+                     <img class="ratingImage" src="{% static 'public-section/imagesANDicons/ratings/2-5.PNG' %}" alt="Rating image not found.">
+                 {% elif data.CouponProductRating >= 3.0 and data.CouponProductRating < 3.5 %}
+                     <img class="ratingImage" src="{% static 'public-section/imagesANDicons/ratings/3.PNG' %}" alt="Rating image not found.">
+                 {% elif data.CouponProductRating >= 3.5 and data.CouponProductRating < 4.0 %}
+                     <img class="ratingImage" src="{% static 'public-section/imagesANDicons/ratings/3-5.PNG' %}" alt="Rating image not found.">
+                 {% elif data.CouponProductRating >= 4.0 and data.CouponProductRating < 4.5 %}
+                     <img class="ratingImage" src="{% static 'public-section/imagesANDicons/ratings/4.PNG' %}" alt="Rating image not found.">
+                 {% elif data.CouponProductRating >= 4.5 and data.CouponProductRating < 4.5 %}
+                     <img class="ratingImage" src="{% static 'public-section/imagesANDicons/ratings/4-5.PNG' %}" alt="Rating image not found.">
+                 {% elif data.CouponProductRating >= 4.5 and data.CouponProductRating <= 5.0 %}
+                     <img class="ratingImage" src="{% static 'public-section/imagesANDicons/ratings/5.PNG' %}" alt="Rating image not found.">
+                 {% endif %}
+                 <span class="totalRatings">({{ data.CouponProductTotalRating }}+)</span>
+             </div>
+           <br>
+            <div class="pricingDiv">
+                <h4 class="displayPrice">${{ data.CouponProductDisplayPrice }}</h4>
+                <span class="discountSpan">{{ data.CouponProductPrice|discount:data.CouponProductDisplayPrice }}%</span>
+                <h4 class="realPrice">${{ data.CouponProductPrice }}</h4>
+
+            </div>
+
+             <div class="back-cover">
+                 <div class="back-cover-body">
+                     <a href="{{ data.CouponLink }}" class="btn couponBtn">Get Deal</a><br><br>
+                     <a href="{% url 'CouponDetailsViewStatic' data.CouponProductSlug %}" class="btn detailsBtn">View details</a>
+                 </div>
+
+             </div>
+         </div>
+     {% endfor %}
+
+
+        <!-- Last card -->
+        <div class="carousel-cell exploreMore">
+            <a href="{% url 'TodayTopDeals' %}">Explore more</a>
+        </div>
+    </div>
+
+    </div>
+
+
+</section><br>
+<div class="container">
+  <hr>
+</div>
+
+
+
+
+
+
+
+  <!--***************Hot deals section start*********************-->
+<section class="cardsContainer" id="hotdeals">
+
+    <h2 class="sectionTitle">Hot Deals</h2><br>
+
+    <div class="container">
+
+         <div class="carousel" data-flickity='{ "groupCells": true }'>
+             {% for data in TenBestDeals %}
+                 <div class="carousel-cell">
+                     <div class="productImgDiv">
+                         {% if data.CouponProductTotalRating > 500 %}
+                                <span class="badge">Best Seller</span>
+                         {% endif %}
+                         <img src="{{ data.CouponProductImage.url }}" alt="Product image not found.">
+                </div>
+
+             <div class="titleAndCateg">
+                 <a href="#"><h4>{{ data.CouponProductTitle|truncatechars:15 }}</h4></a>
+                 <p class="categeory"><i class="fa fa-check-circle"></i>&nbsp;Coupon verified</p>
+             </div>
+
+             <div class="ratingDiv">
+                 <p class="ratingP">{{ data.CouponProductRating }}</p>
+                 {% if data.CouponProductRating >= 1.0 and data.CouponProductRating < 1.5 %}
+                     <img class="ratingImage" src="{% static 'public-section/imagesANDicons/ratings/1.PNG' %}" alt="Rating image not found.">
+                 {% elif data.CouponProductRating >= 1.5 and data.CouponProductRating < 2.0 %}
+                     <img class="ratingImage" src="{% static 'public-section/imagesANDicons/ratings/1-5.PNG' %}" alt="Rating image not found.">
+                 {% elif data.CouponProductRating >= 2.0 and data.CouponProductRating < 2.5 %}
+                     <img class="ratingImage" src="{% static 'public-section/imagesANDicons/ratings/2.PNG' %}" alt="Rating image not found.">
+                 {% elif data.CouponProductRating >= 2.5 and data.CouponProductRating < 3.0 %}
+                     <img class="ratingImage" src="{% static 'public-section/imagesANDicons/ratings/2-5.PNG' %}" alt="Rating image not found.">
+                 {% elif data.CouponProductRating >= 3.0 and data.CouponProductRating < 3.5 %}
+                     <img class="ratingImage" src="{% static 'public-section/imagesANDicons/ratings/3.PNG' %}" alt="Rating image not found.">
+                 {% elif data.CouponProductRating >= 3.5 and data.CouponProductRating < 4.0 %}
+                     <img class="ratingImage" src="{% static 'public-section/imagesANDicons/ratings/3-5.PNG' %}" alt="Rating image not found.">
+                 {% elif data.CouponProductRating >= 4.0 and data.CouponProductRating < 4.5 %}
+                     <img class="ratingImage" src="{% static 'public-section/imagesANDicons/ratings/4.PNG' %}" alt="Rating image not found.">
+                 {% elif data.CouponProductRating >= 4.5 and data.CouponProductRating < 4.5 %}
+                     <img class="ratingImage" src="{% static 'public-section/imagesANDicons/ratings/4-5.PNG' %}" alt="Rating image not found.">
+                 {% elif data.CouponProductRating >= 4.5 and data.CouponProductRating <= 5.0 %}
+                     <img class="ratingImage" src="{% static 'public-section/imagesANDicons/ratings/5.PNG' %}" alt="Rating image not found.">
+                 {% endif %}
+                 <span class="totalRatings">({{ data.CouponProductTotalRating }}+)</span>
+             </div>
+           <br>
+            <div class="pricingDiv">
+                <h4 class="displayPrice">${{ data.CouponProductDisplayPrice }}</h4>
+                <span class="discountSpan">{{ data.CouponProductPrice|discount:data.CouponProductDisplayPrice }}%</span>
+                <h4 class="realPrice">${{ data.CouponProductPrice }}</h4>
+
+            </div>
+
+             <div class="back-cover">
+                 <div class="back-cover-body">
+                     <a href="{{ data.CouponLink }}" class="btn couponBtn">Get Deal</a><br><br>
+                     <a href="{% url 'CouponDetailsViewStatic' data.CouponProductSlug %}" class="btn detailsBtn">View details</a>
+                 </div>
+
+             </div>
+         </div>
+     {% endfor %}
+
+
+        <!-- Last card -->
+        <div class="carousel-cell exploreMore">
+            <a href="{% url 'HotDeals' %}">Explore more</a>
+        </div>
+
+        </div>
+
+    </div>
+
+
+</section><br>
+ <!--***************Hot deals section start*********************-->
+<div class="container">
+  <hr>
+</div>
+
+
+
+
+
+
+
+
+
+  <!--***************Amazon deals section start*********************-->
+<section class="cardsContainer" id="amazondeals">
+
+    <h2 class="sectionTitle">Amazon Deals</h2><br>
+
+    <div class="container">
+
+         <div class="carousel" data-flickity='{ "groupCells": true }'>
+
+             {% for data in AmazonDeals %}
+                 <div class="carousel-cell">
+                     <div class="productImgDiv">
+                         {% if data.CouponProductTotalRating > 500 %}
+                                <span class="badge">Best Seller</span>
+                         {% endif %}
+                         <img src="{{ data.CouponProductImage.url }}" alt="Product image not found.">
+                </div>
+
+             <div class="titleAndCateg">
+                 <a href="#"><h4>{{ data.CouponProductTitle|truncatechars:15 }}</h4></a>
+                 <p class="categeory"><i class="fa fa-check-circle"></i>&nbsp;Coupon verified</p>
+             </div>
+
+             <div class="ratingDiv">
+                 <p class="ratingP">{{ data.CouponProductRating }}</p>
+                 {% if data.CouponProductRating >= 1.0 and data.CouponProductRating < 1.5 %}
+                     <img class="ratingImage" src="{% static 'public-section/imagesANDicons/ratings/1.PNG' %}" alt="Rating image not found.">
+                 {% elif data.CouponProductRating >= 1.5 and data.CouponProductRating < 2.0 %}
+                     <img class="ratingImage" src="{% static 'public-section/imagesANDicons/ratings/1-5.PNG' %}" alt="Rating image not found.">
+                 {% elif data.CouponProductRating >= 2.0 and data.CouponProductRating < 2.5 %}
+                     <img class="ratingImage" src="{% static 'public-section/imagesANDicons/ratings/2.PNG' %}" alt="Rating image not found.">
+                 {% elif data.CouponProductRating >= 2.5 and data.CouponProductRating < 3.0 %}
+                     <img class="ratingImage" src="{% static 'public-section/imagesANDicons/ratings/2-5.PNG' %}" alt="Rating image not found.">
+                 {% elif data.CouponProductRating >= 3.0 and data.CouponProductRating < 3.5 %}
+                     <img class="ratingImage" src="{% static 'public-section/imagesANDicons/ratings/3.PNG' %}" alt="Rating image not found.">
+                 {% elif data.CouponProductRating >= 3.5 and data.CouponProductRating < 4.0 %}
+                     <img class="ratingImage" src="{% static 'public-section/imagesANDicons/ratings/3-5.PNG' %}" alt="Rating image not found.">
+                 {% elif data.CouponProductRating >= 4.0 and data.CouponProductRating < 4.5 %}
+                     <img class="ratingImage" src="{% static 'public-section/imagesANDicons/ratings/4.PNG' %}" alt="Rating image not found.">
+                 {% elif data.CouponProductRating >= 4.5 and data.CouponProductRating < 4.5 %}
+                     <img class="ratingImage" src="{% static 'public-section/imagesANDicons/ratings/4-5.PNG' %}" alt="Rating image not found.">
+                 {% elif data.CouponProductRating >= 4.5 and data.CouponProductRating <= 5.0 %}
+                     <img class="ratingImage" src="{% static 'public-section/imagesANDicons/ratings/5.PNG' %}" alt="Rating image not found.">
+                 {% endif %}
+                 <span class="totalRatings">({{ data.CouponProductTotalRating }}+)</span>
+             </div>
+           <br>
+            <div class="pricingDiv">
+                <h4 class="displayPrice">${{ data.CouponProductDisplayPrice }}</h4>
+                <span class="discountSpan">{{ data.CouponProductPrice|discount:data.CouponProductDisplayPrice }}%</span>
+                <h4 class="realPrice">${{ data.CouponProductPrice }}</h4>
+
+            </div>
+
+             <div class="back-cover">
+                 <div class="back-cover-body">
+                     <a href="{{ data.CouponLink }}" class="btn couponBtn">Get Deal</a><br><br>
+                     <a href="{% url 'CouponDetailsViewStatic' data.CouponProductSlug %}" class="btn detailsBtn">View details</a>
+                 </div>
+
+             </div>
+         </div>
+     {% endfor %}
+
+
+        <!-- Last card -->
+        <div class="carousel-cell exploreMore">
+            <a href="{% url 'BrandAllProducts' 'amazon' %}">Explore more</a>
+        </div>
+
+         </div>
+
+
+    </div>
+
+
+</section><br>
+<!--Amazon deals end-->
+<div class="container">
+  <hr>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--***************Aliexpress deals section start*********************-->
+<section class="cardsContainer" id="aliexpressdeals">
+
+    <h2 class="sectionTitle">Aliexpress Deals</h2><br>
+
+    <div class="container">
+
+         <div class="carousel" data-flickity='{ "groupCells": true }'>
+
+             {% for data in AliexpressDeals %}
+                 <div class="carousel-cell">
+                     <div class="productImgDiv">
+                         {% if data.CouponProductTotalRating > 500 %}
+                                <span class="badge">Best Seller</span>
+                         {% endif %}
+                         <img src="{{ data.CouponProductImage.url }}" alt="Product image not found.">
+                </div>
+
+             <div class="titleAndCateg">
+                 <a href="#"><h4>{{ data.CouponProductTitle|truncatechars:15 }}</h4></a>
+                 <p class="categeory"><i class="fa fa-check-circle"></i>&nbsp;Coupon verified</p>
+             </div>
+
+             <div class="ratingDiv">
+                 <p class="ratingP">{{ data.CouponProductRating }}</p>
+                 {% if data.CouponProductRating >= 1.0 and data.CouponProductRating < 1.5 %}
+                     <img class="ratingImage" src="{% static 'public-section/imagesANDicons/ratings/1.PNG' %}" alt="Rating image not found.">
+                 {% elif data.CouponProductRating >= 1.5 and data.CouponProductRating < 2.0 %}
+                     <img class="ratingImage" src="{% static 'public-section/imagesANDicons/ratings/1-5.PNG' %}" alt="Rating image not found.">
+                 {% elif data.CouponProductRating >= 2.0 and data.CouponProductRating < 2.5 %}
+                     <img class="ratingImage" src="{% static 'public-section/imagesANDicons/ratings/2.PNG' %}" alt="Rating image not found.">
+                 {% elif data.CouponProductRating >= 2.5 and data.CouponProductRating < 3.0 %}
+                     <img class="ratingImage" src="{% static 'public-section/imagesANDicons/ratings/2-5.PNG' %}" alt="Rating image not found.">
+                 {% elif data.CouponProductRating >= 3.0 and data.CouponProductRating < 3.5 %}
+                     <img class="ratingImage" src="{% static 'public-section/imagesANDicons/ratings/3.PNG' %}" alt="Rating image not found.">
+                 {% elif data.CouponProductRating >= 3.5 and data.CouponProductRating < 4.0 %}
+                     <img class="ratingImage" src="{% static 'public-section/imagesANDicons/ratings/3-5.PNG' %}" alt="Rating image not found.">
+                 {% elif data.CouponProductRating >= 4.0 and data.CouponProductRating < 4.5 %}
+                     <img class="ratingImage" src="{% static 'public-section/imagesANDicons/ratings/4.PNG' %}" alt="Rating image not found.">
+                 {% elif data.CouponProductRating >= 4.5 and data.CouponProductRating < 4.5 %}
+                     <img class="ratingImage" src="{% static 'public-section/imagesANDicons/ratings/4-5.PNG' %}" alt="Rating image not found.">
+                 {% elif data.CouponProductRating >= 4.5 and data.CouponProductRating <= 5.0 %}
+                     <img class="ratingImage" src="{% static 'public-section/imagesANDicons/ratings/5.PNG' %}" alt="Rating image not found.">
+                 {% endif %}
+                 <span class="totalRatings">({{ data.CouponProductTotalRating }}+)</span>
+             </div>
+           <br>
+            <div class="pricingDiv">
+                <h4 class="displayPrice">${{ data.CouponProductDisplayPrice }}</h4>
+                <span class="discountSpan">{{ data.CouponProductPrice|discount:data.CouponProductDisplayPrice }}%</span>
+                <h4 class="realPrice">${{ data.CouponProductPrice }}</h4>
+
+            </div>
+
+             <div class="back-cover">
+                 <div class="back-cover-body">
+                     <a href="{{ data.CouponLink }}" class="btn couponBtn">Get Deal</a><br><br>
+                     <a href="{% url 'CouponDetailsViewStatic' data.CouponProductSlug %}" class="btn detailsBtn">View details</a>
+                 </div>
+
+             </div>
+         </div>
+     {% endfor %}
+
+
+        <!-- Last card -->
+        <div class="carousel-cell exploreMore">
+            <a href="{% url 'BrandAllProducts' 'aliexpress' %}">Explore more</a>
+        </div>
+
+         </div>
+
+
+    </div>
+
+
+</section><br>
+<!--Aliexpress deals end-->
+<div class="container">
+  <hr>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--*************** Total items start *********************-->
+<section class="totalItems">
+    <div class="container-fluid justify-content-center">
+    <div class="row">
+
+    <div class="p-3 text-center m-auto counterDiv col-sm-12 col-lg-4 col-md-4">
+        <h4>Total Coupons</h4>
+        <h2 class="counts">{{ TotalCoupons }}</h2>
+    </div>
+
+    <div class="p-3 text-center m-auto counterDiv col-sm-12 col-lg-4 col-md-4">
+        <h4>Total Brands</h4>
+        <h2 class="counts">{{ TotalBrands }}</h2>
+    </div>
+
+        <div class="p-3 text-center m-auto counterDiv col-sm-12 col-lg-4 col-md-4">
+        <h4>Total Active Coupons</h4>
+        <h2 class="counts">{{ TotalActiveCoupons }}</h2>
+    </div>
+
+        </div>
+        </div>
+</section>
+    <!--*************** Total items end *********************-->
+
+
+
+
+
+
+
+
+  <!--***************Trusted brands start*********************-->
+  <br>
+<section class="trustedBrands" id="brands">
+<div class="container-fluid text-center">
+        <h2 class="sectionTitle">Trusted by {{ TotalBrands|minus1:TotalBrands }}+ brands</h2>
+    </div><br>
+    <div class="container brandsDiv">
+        <img class="brandsImage" src="https://mixsaver.com/media/Brand-Images/Amazon.jpg" alt="Brand">
+        
+        <img class="brandsImage" src="https://mixsaver.com/media/Brand-Images/Aliexpress-Logo.jpg" alt="Brand">
+        
+        <img class="brandsImage" src="https://mixsaver.com/media/Brand-Images/fiverr.png" alt="Brand">
+        
+        <img class="brandsImage" src="https://mixsaver.com/media/Brand-Images/download.png" alt="Brand">
+        
+        <img class="brandsImage" src="https://mixsaver.com/media/Brand-Images/default-meta-image_3Z2AqAx.png" alt="Brand">
+        
+        <img class="brandsImage" src="https://mixsaver.com/media/Brand-Images/download_V2vyHGq.png" alt="Brand">
+        
+        
+        <img class="brandsImage" src="https://mixsaver.com/media/Brand-Images/103595754_1446156492253302_6691373520822030571_n.png" alt="Brand">
+        
+        <img class="brandsImage" src="https://mixsaver.com/media/Brand-Images/AVG_Logo_2014_bvuwFLA.png" alt="Brand">
+        
+        <img class="brandsImage" src="https://mixsaver.com/media/Brand-Images/Hostinger-webhosting-review.png" alt="Brand">
+        
+        <img class="brandsImage" src="https://mixsaver.com/media/Brand-Images/Tripdotcom.png" alt="Brand">
+        
+        <img class="brandsImage" src="https://mixsaver.com/media/Brand-Images/onbuy.png" alt="Brand">
+        
+        <img class="brandsImage" src="https://mixsaver.com/media/Brand-Images/logo_1.png" alt="Brand">
+
+    
+    </div>
+</section>
+
+    <!--***************Trusted brands end*********************-->
+
+
+
+
+
+
+
+
+
+
+<!--***************Footer start*********************-->
+  <br>
+<!-- Footer -->
+        <footer id="contactUs">
+        	<div class="footer-top" id="footer">
+		        <div class="container">
+		        	<div class="row">
+		        		<div class="col-md-3 footer-about">
+		        			<img class="logo-footer" src="{% static 'public-section/imagesANDicons/logo.png' %}" alt="Footer logo not found." data-at2x="assets/img/logo.png">
+		        			<p>
+		        				We bring best deals for you of all big and small brands. Always visit mixsaver.com for exclusive deals and offers.
+		        			</p>
+		        			<p style="font-weight: bold"><a href="{% url 'HotDeals' %}">Get Exclusive Deals</a></p>
+	                    </div>
+		        		<div class="col-md-3 footer-contact">
+		        			<h3 class="footersectionTitle">Contact</h3>
+		                	<p><i class="fa fa-map-marker"></i>25100 Peshawar, KPK</p>
+		                	<p><i class="fa fa-envelope"></i> Email: <a href="mailto:mixsaverofficial@gmail.com">mixsaverofficial@gmail.com</a></p>
+	                    </div>
+	                    <div class="col-md-3 footer-links">
+	                    			<h3 class="footersectionTitle">Links</h3>
+	                    			<p><a class="scroll-link" href="{% url 'Home' %}">Home</a></p>
+	                    			<p><a href="{% url 'TodayTopDeals' %}">Today Top Deals</a></p>
+	                    			<p><a href="{% url 'Articles' 'privacy-policy' %}">Privacy Policy</a></p>
+                                    <p><a href="{% url 'Articles' 'terms-use' %}">Terms of Use</a></p>
+                                    <p><a href="{% url 'Sitemap' %}">Sitemap</a></p>
+	                    			<p><a href="{% url 'ContactUsView' %}">Contact Us</a></p>
+	                    			
+	                    			<p><a href="{% url 'BlogView' %}">Blog</a></p>
+	                    			
+	                    			<p><a href="https://mixsaver.com/article/guest-article/">Guest Article</a></p>
+	                    			
+	                    		</div>
+
+                                 <div class="col-md-3">
+                                    <h3 class="footersectionTitle">Newsletter</h3>
+	                    			<p>Subscribe for our newsletter.</p>
+                                     <form method="post" id="newsletterForm" action="{% url "NewsletterView" %}">
+                                         {% csrf_token %}
+                                          <div class="form-group ">
+                                     <input type="email" name="email" class="form-control m-auto" placeholder="Enter email" required>
+                                                          </div>
+                                         <button class="form-control m-auto" type="submit">Subscribe</button>
+                                     </form>
+
+                                     <div class="playStoreImagesDiv">
+                                         <h5 class="footersectionTitle">Download Our App</h5>
+                                         <a href="{% url 'MobileApp' %}?app=IOS">
+                                         <img src="{% static 'public-section/imagesANDicons/applestore.png' %}" alt="Download IOS App">
+                                             </a>
+                                         <a href="{% url 'MobileApp' %}?app=Android">
+                                         <img src="{% static 'public-section/imagesANDicons/playstore.png' %}" alt="Download Android App">
+                                             </a>
+                                     </div>
+	                    		</div>
+
+
+
+
+		            </div>
+		        </div>
+	        </div>
+	        <div class="footer-bottom">
+	        	<div class="container">
+	        		<div class="row">
+	           			<div class="col-md-6 footer-copyright">
+	                    	&copy; Copyright All Right Reversed &nbsp;<a href="{% url 'Home' %}">MixSaver</a>.
+                            &nbsp;Developed by <a href="https://20services.com/">20services</a>
+	                    </div>
+	           			<div class="col-md-6 footer-social">
+	                    	
+	                    	
+	                    </div>
+	           		</div>
+	        	</div>
+	        </div>
+        </footer>
+
+
+
+  <!--Arrow up start-->
+  <a href="#" id="myScrollUp" onclick="funtop()">
+  <div class="arrowUp">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+  </div>
+      </a>
+
+
+<!-- Libraries for counter up -->
+ <script src="{% static 'public-section/Jquery/Counter-Up-master/jquery.counterup.min.js' %}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+
+
+<!-- index page scripts -->
+<script src="{% static 'public-section/java/index.js' %}"></script>
+
+<!-- Horizontal displaying products with arrows library (flickity) -->
+<script src="{% static 'public-section/other_libaries/coursel/coursel.java' %}"></script>
+
+
+
+<!-- Bootstrap CDN -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+
+
+</body>
+</html>

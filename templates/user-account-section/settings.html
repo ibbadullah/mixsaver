@@ -1,0 +1,246 @@
+{% extends 'user-account-section/base.html' %}
+{% block title %}Settings{% endblock %}
+{% load filters %}
+{% block stylesheet %}
+  <style>
+    .formBackgroundDiv{
+       background-color: white;
+       border-radius: 10px;
+       padding: 35px 70px 35px 70px;
+       border: 1px solid gainsboro;
+       -webkit-box-shadow: -1px 0px 20px -13px rgba(0,0,0,0.8);
+      -moz-box-shadow: -1px 0px 20px -13px rgba(0,0,0,0.8);
+      box-shadow: -1px 0px 20px -13px rgba(0,0,0,0.8);
+   }
+
+    .formBackgroundDiv h3{
+        margin-bottom: 0px;
+        font-size: 22px;
+    }
+
+    .formTag input{
+
+        height: 40px;
+        border: 1px solid gray;
+    }
+    .formTag input:focus{
+
+        border: 1px solid indigo;
+        transition: 0.5s;
+        box-shadow: none;
+        color: indigo;
+
+    }
+    .formTag button{
+        width: 100%;
+        height: 40px;
+        background-color: indigo;
+        border: none;
+    }
+    .formTag button:hover{
+        border: 1px solid indigo;
+        background-color: white;
+        color: indigo;
+    }
+
+    .formTag button:focus{
+        border: 1px solid indigo;
+        background-color: white;
+        color: indigo;
+        box-shadow: none;
+         box-shadow: none;
+    }
+
+    .formTag select{
+        height: 40px;
+        border: 1px solid gray;
+
+
+    }
+    .formTag select:focus{
+        border: 1px solid indigo;
+        transition: 0.5s;
+         box-shadow: none;
+        color: indigo;
+
+    }
+    .formTag p{
+        font-size: 12px;
+        margin-top: 12px!important;
+        font-family: Calibri;
+    }
+
+    .formTag a{
+        text-decoration: none;
+        color: indigo;
+    }
+    .formTag a:hover{
+        text-decoration: none;
+        color:#000000;
+    }
+    .formTag h6{
+        font-weight: normal;
+    }
+
+
+
+
+
+    /*#########################Start of ipad pro screens###########################*/
+    @media only screen and (max-width:1024px) {
+
+    .formBackgroundDiv {
+        padding: 30px 50px 20px 30px;
+    }
+    .formBackgroundDiv h3{
+        margin-bottom: 0px;
+        font-size: 24px;
+    }
+    }
+     /*#########################End of ipad pro screens###########################*/
+
+
+
+
+
+
+
+
+
+    /*#########################Start of tablets screens###########################*/
+    @media only screen and (max-width:768px) {
+
+    .formBackgroundDiv {
+        padding: 20px 30px 20px 30px;
+    }
+    .formBackgroundDiv h3{
+        margin-bottom: 0px;
+        font-size: 24px;
+    }
+    }
+     /*#########################End of tablets screens###########################*/
+
+
+
+
+
+
+
+     /*#########################Start of mobile screens###########################*/
+    @media only screen and (max-width:480px) {
+
+    .formBackgroundDiv {
+        padding: 20px 12px 20px 12px;
+    }
+    .formBackgroundDiv h3{
+        margin-bottom: 0px;
+        font-size: 18px;
+    }
+    }
+      /*#########################End of mobile screens###########################*/
+
+  </style>
+{% endblock %}
+
+
+{% block content %}
+          <!-- Page Heading -->
+          <h1 class="h3 mb-4 text-gray-800">Profile & Settings</h1>
+
+           <div class="container col-md-10">
+              <div class="row">
+                  <div class="col-sm-12 col-md-12 col-lg-12 m-auto">
+               <div class="formBackgroundDiv pl-lg-5 pr-lg-5 pl-md-5 pr-md-5 col-sm-12">
+                     {% for message in messages %}
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ message }}
+
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                    {% endfor %}
+
+
+                   <h3>Update account</h3>
+              <form class="formTag" method="post" action="{% url 'Settings' %}">
+                  {% csrf_token %}
+                  <br>
+                  <div class="form-group">
+                  <input type="text" name="first-name" value="{{ request.user.first_name|decrypt:request.user.first_name }}" class="form-control m-auto" placeholder="Enter first name" required>
+                </div>
+
+                  <div class="form-group ">
+                  <input type="text" name="last-name" value="{{ request.user.last_name|decrypt:request.user.last_name }}"  class="form-control m-auto" placeholder="Enter last name" required>
+                </div>
+
+
+
+                <div class="form-group">
+                  <input type="email" value="{{ request.user.email }}"  class="form-control"  placeholder="Enter email" readonly>
+                </div>
+
+
+                 <button type="submit" class="btn btn-primary">Update account</button>
+              </form><br><hr>
+
+
+
+
+                  <h3>Change Password</h3><br>
+                 <a href="{% url 'password_change' %}" class="btn btn-primary">Change password</a><br><hr>
+
+
+
+                  <h3>Add new email</h3>
+
+
+                {% if secondaryEmail %}
+
+                    {% for e in secondaryEmail %}
+                        <form class="formTag" method="post" action="{% url 'UpdateSecondaryEmail' %}">
+                  <br>{% csrf_token %}
+
+                <div class="form-group">
+
+                  <input value="{{ e.UserSecondaryEmail|decrypt:e.UserSecondaryEmail }}" name="email" type="email" class="form-control"  placeholder="Enter new email" required>
+                </div>
+                 <button type="submit" class="btn btn-primary">Update email</button>
+              </form><br><hr>
+
+                    {% endfor %}
+
+
+                     {% else %}
+
+                    <form class="formTag" method="post" action="{% url 'AddSecondaryEmail' %}">
+                  <br>
+                        {% csrf_token %}
+                <div class="form-group">
+
+                  <input  type="email" name="email" class="form-control"  placeholder="Enter new email" required>
+                </div>
+                 <button type="submit" class="btn btn-primary">Add email</button>
+                </form><br><hr>
+
+                   {% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+              </div>
+                </div>
+               </div>
+              </div>
+
+{% endblock %}
+

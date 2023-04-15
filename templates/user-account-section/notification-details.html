@@ -1,0 +1,43 @@
+{% extends 'user-account-section/base.html' %}
+{% block title %}Notification Details{% endblock %}
+
+{% block stylesheet %}
+  <style>
+    .timeSpan{
+      font-size: 13px;
+    }
+    .notificationTitle {
+      color: #1f1a2b;
+      font-weight: 500;
+    }
+    .detailsText{
+      color: #413d4a;
+    }
+  </style>
+{% endblock %}
+
+
+
+{% block content %}
+          <!-- Page Heading -->
+   <h1 class="h3 mb-4 text-gray-800">Notification details</h1>
+
+
+
+          <!-- DataTales Example -->
+          <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">Details</h6>
+            </div>
+            <div class="card-body">
+              <div class="container">
+                <span class="timeSpan">{{ Details.DateTime }}</span>
+                <h5 class="notificationTitle">{{ Details.Title }}</h5>
+                <p class="detailsText">
+                    {{ Details.Message }}
+                </p>
+              </div>
+            </div>
+          </div>
+
+{% endblock %}

@@ -1,0 +1,104 @@
+{% extends 'public-section/base.html' %}
+{% load static %}
+{% block title %}{{ Data.ArticleTitle }} - Mixsaver{% endblock %}
+{% block description %}{{ Data.ArticleBodyText|truncatechars:160 }}{% endblock %}
+{% block keywords %}{{ Data.ArticleKeywords }}{% endblock %}
+{% block author %}Mixsaver{% endblock %}
+{% block robots %}index, follow{% endblock %}
+
+{% block ogtitle %}{{ Data.ArticleTitle }} - Mixsaver{% endblock %}
+{% block ogdescription %}{{ Data.ArticleBodyText|truncatechars:160 }}{% endblock %}
+{% block ogurl %}{{ pageUrl}}{% endblock %}
+{% block ogimage %}{{ Data.ArticleImage.url }}{% endblock %}
+
+{% block twittertitle %}{{ Data.ArticleTitle }} - Mixsaver{% endblock %}
+{% block twitterdescription %}{{ Data.ArticleBodyText|truncatechars:160 }}{% endblock %}
+{% block pageurl %}{{ pageUrl }}{% endblock %}
+
+{% block stylesheet %}
+
+    <style>
+body{
+  background-color:#F7F7F7;
+}
+
+.Content-Container{
+     margin-top: 140px;
+     margin-bottom: 50px;
+     background-color: white;
+     border-radius: 10px;
+     padding: 25px 70px 25px 70px;
+     border: 1px solid gainsboro;
+     -webkit-box-shadow: -1px 0px 20px -13px rgba(0,0,0,0.8);
+    -moz-box-shadow: -1px 0px 20px -13px rgba(0,0,0,0.8);
+    box-shadow: -1px 0px 20px -13px rgba(0,0,0,0.8);
+    width: 80%;
+    margin-left: 10%;
+}
+
+.Content-Container img{
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.Content-Container h1{
+    font-family: Calibri;
+    font-size: 30px;
+    color: #000;
+}
+
+.Content-Container p{
+    font-family: Calibri;
+    font-size: 20px;
+    color: #252626;
+    line-height: 20px;
+
+}
+
+.Content-Container a{
+    color: indigo;
+    text-decoration: none;
+}
+.Content-Container a:hover{
+    color: green;
+}
+
+/* Designing for mobile screens*/
+ @media only screen and (max-width: 480px) {
+.Content-Container{
+    width: 90%;
+    margin-left: 5%;
+    padding: 15px 15px 10px 15px;
+    margin-top: 100px;
+    margin-bottom: 10px;
+}
+
+.Content-Container p{
+    font-family: Calibri;
+    font-size: 1.1rem;
+    color: darkslategrey;
+    line-height: 22px;
+
+}
+
+.Content-Container img{
+    max-height: 100%!important;
+    max-width: 100%!important;
+}
+
+ }
+
+  </style>
+
+{% endblock %}
+
+
+{% block content %}
+<div class="Content-Container" oncopy="return false" onpaste="return false" oncut="return false">
+            <h1>{{ Data.ArticleTitle }}</h1>
+             <P>
+                 {{ Data.ArticleBodyText|safe }}
+             </P>
+        </div>
+
+{% endblock %}

@@ -1,0 +1,394 @@
+{% extends 'user-account-section/base.html' %}
+{% load filters %}
+{% load static %}
+{% block title %}My Deals{% endblock %}
+
+{% block stylesheet %}
+ <style>
+
+	 body{
+		background-color:#F7F7F7;
+	 }
+
+     .container{
+         text-align: center;
+     }
+    .cardBg{
+        display: inline-block;
+        width: 200px;
+        height: 290px;
+        border-radius: 8px;
+        background-color: white;
+        overflow: hidden;
+        position: relative;
+        margin: 5px 5px 5px 5px;
+        -webkit-box-shadow: 0px 0px 10px -5px rgba(0,0,0,0.66);
+        -moz-box-shadow: 0px 0px 10px -5px rgba(0,0,0,0.66);
+        box-shadow: 0px 0px 10px -5px rgba(0,0,0,0.66);
+
+    }
+    .cardBg:hover{
+        transition: 0.5s;
+        transform: translateY(-10px);
+        -webkit-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.66);
+        -moz-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.66);
+        box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.66);
+    }
+
+     .productImgDiv{
+         width: 200px;
+         height: 180px;
+         border-bottom: 1px dashed grey;
+         position: absolute;
+     }
+     .productImgDiv img{
+         width: 200px;
+         height: 170px;
+         margin-top: 0px;
+     }
+     .bestSellerBadge{
+         background-color: orangered;
+         color: white;
+         width: 130px;
+         height: 30px;
+         text-align: center;
+         font-family: Calibri;
+         font-size: 15px;
+         line-height: 30px;
+         position: absolute;
+         top: 15px;
+         left: -35px;
+         float: left;
+         transform: rotate(-45deg);
+     }
+     .titleAndCateg {
+         width: 200px;
+         height: 36px;
+         position: absolute;
+         margin-top: 187px;
+     }
+     .titleAndCateg a{
+         text-decoration: none;
+     }
+
+     .titleAndCateg h4 {
+         font-size: 17px;
+         margin-left: 10px;
+         margin-right: 10px;
+         margin-bottom: 0px;
+         line-height: 17px;
+         color: darkslategrey;
+         font-family: Calibri;
+         font-weight: bold;
+         overflow: hidden;
+     }
+
+     .titleAndCateg h4:hover{
+         color: indigo;
+     }
+     .categeory {
+         font-family: Calibri;
+         font-size: 16px;
+         color: green;
+         margin-top: 3px;
+         text-align: center;
+         margin-bottom: 0px;
+     }
+
+     .ratingDiv{
+         margin-top: 228px;
+         width: 200px;
+         float: left;
+         position: absolute;
+         height: 30px;
+     }
+
+      .ratingP {
+         margin-left: 10px;
+         font-size: 17px;
+         font-weight: bold;
+         color: #434f46;
+         float: left;
+          line-height: 30px;
+     }
+
+     .ratingImage{
+         width: 90px;
+         height: 30px;
+         float: left;
+         margin-left: 3px;
+         margin-top: 0px;
+     }
+
+     .totalRatings{
+         float: left;
+         margin-left: 3px;
+         height: 30px;
+         line-height: 30px;
+         font-family: Calibri;
+         color: grey;
+         font-size: 14px;
+     }
+
+
+
+
+    .pricingDiv{
+        width: 200px;
+        height: 22px;
+        margin-top: 233px;
+        position: absolute;
+    }
+    .pricingDiv .realPrice{
+        text-align: right;
+        float: right;
+        margin-right: 10px;
+        font-size: 22px;
+        color: #434f46;
+        line-height: 22px;
+        font-family: Calibri;
+        font-weight: bold;
+
+
+    }
+     .pricingDiv .displayPrice{
+         text-align: left;
+         float: left;
+         margin-left: 10px;
+         font-size: 18px;
+         font-family: Calibri;
+         text-decoration: line-through;
+         color: grey;
+         line-height: 22px;
+     }
+     .discountSpan {
+         background-color: #265182;
+         color: white;
+         width: 45px;
+         height: 22px;
+         border-radius: 3px;
+         font-family: Calibri;
+         font-size: 17px;
+         float: left;
+         margin-left: 8px;
+         line-height: 22px;
+     }
+
+     .back-cover{
+         position: absolute;
+         background-color: indigo;
+         opacity: 0.9;
+         width: 200px;
+         height: 290px;
+         z-index: 1;
+         top: 0;
+         left: 0;
+         display: none;
+     }
+
+     .cardBg:hover .back-cover{
+         display: block;
+         transition: 0.6s;
+     }
+
+     .back-cover-body{
+         margin-top: 91px;
+         width: 200px;
+         height: 88px;
+     }
+
+     .couponBtn{
+         background-color: #ff991c;
+         color: white;
+         width: 130px;
+     }
+
+     .couponBtn:hover{
+         color: white;
+         background-color: #c26b00;
+
+     }
+     .detailsBtn{
+         width: 130px;
+         background-color: #c2005b;
+         color: white;
+     }
+     .detailsBtn:hover{
+         background-color: #8f0948;
+         color: white;
+     }
+
+
+
+     /*Pagination*/
+     .paginationDiv{
+        margin-top: 30px;
+        width: 100%;
+
+    }
+    .pagination{
+        justify-content: center;
+    }
+    .paginationBtn{
+        font-family:"Comic Sans MS", cursive, sans-serif;
+        color: white;
+        font-weight: bold;
+        border-radius: 50% !important;
+        background-color: indigo;
+        border: 1px solid gainsboro;
+        outline: none;
+         height: 40px;
+        width: 40px;
+    }
+    .paginationBtn a{
+        color: white;
+        text-decoration: none;
+          line-height: 18px !important;
+        font-size: 18px !important;
+    }
+    .paginationBtn:hover{
+        border: 1px solid indigo;
+        opacity: 0.7;
+    }
+    .paginationBtn a:focus{
+        color: white;
+    }
+
+    .page-item{
+        outline: none;
+    }
+    .page-link{
+        color: darkslategrey;
+         background: none;
+        outline: none;
+        border: none;
+        font-family: Calibri;
+
+
+    }
+    .page-link:hover{
+        background: none;
+        outline: none;
+        border: none;
+        text-decoration: none;
+        color: indigo;
+
+
+    }
+    .page-link:focus{
+         background: none;
+        outline: none;
+        border: none;
+        box-shadow: none;
+    }
+
+ </style>
+
+{% endblock %}
+
+
+{% block content %}
+
+          <!-- Page Heading -->
+          <h1 class="h3 mb-4 text-gray-800">My deals</h1>
+
+          <div class="container">
+
+            {% for data in Data %}
+
+                 <div class="cardBg">
+                 <div class="productImgDiv">
+                     {% if data.CouponProductTotalRating > 100 %}
+                        <span class="bestSellerBadge">Best Seller</span>
+                     {% endif %}
+
+                     <img src="{{ data.CouponProductImage.url }}" alt="Product image not found.">
+                 </div>
+
+                 <div class="titleAndCateg">
+                     <a href="#"><h4>{{ data.CouponProductTitle|truncatechars:15 }}</h4></a>
+                     <p class="categeory"><i class="fa fa-check-circle"></i>&nbsp;Coupon verified</p>
+                 </div>
+
+                 <div class="ratingDiv">
+                     <p class="ratingP">{{ data.CouponProductRating }}</p>
+                     {% if data.CouponProductRating >= 1.0 and data.CouponProductRating < 1.5 %}
+                         <img class="ratingImage" src="{% static 'public-section/imagesANDicons/ratings/1.PNG' %}" alt="Rating image not found.">
+                     {% elif data.CouponProductRating >= 1.5 and data.CouponProductRating < 2.0 %}
+                         <img class="ratingImage" src="{% static 'public-section/imagesANDicons/ratings/1-5.PNG' %}" alt="Rating image not found.">
+                     {% elif data.CouponProductRating >= 2.0 and data.CouponProductRating < 2.5 %}
+                         <img class="ratingImage" src="{% static 'public-section/imagesANDicons/ratings/2.PNG' %}" alt="Rating image not found.">
+                     {% elif data.CouponProductRating >= 2.5 and data.CouponProductRating < 3.0 %}
+                         <img class="ratingImage" src="{% static 'public-section/imagesANDicons/ratings/2-5.PNG' %}" alt="Rating image not found.">
+                     {% elif data.CouponProductRating >= 3.0 and data.CouponProductRating < 3.5 %}
+                         <img class="ratingImage" src="{% static 'public-section/imagesANDicons/ratings/3.PNG' %}" alt="Rating image not found.">
+                     {% elif data.CouponProductRating >= 3.5 and data.CouponProductRating < 4.0 %}
+                         <img class="ratingImage" src="{% static 'public-section/imagesANDicons/ratings/3-5.PNG' %}" alt="Rating image not found.">
+                     {% elif data.CouponProductRating >= 4.0 and data.CouponProductRating < 4.5 %}
+                         <img class="ratingImage" src="{% static 'public-section/imagesANDicons/ratings/4.PNG' %}" alt="Rating image not found.">
+                     {% elif data.CouponProductRating >= 4.5 and data.CouponProductRating < 4.5 %}
+                         <img class="ratingImage" src="{% static 'public-section/imagesANDicons/ratings/4-5.PNG' %}" alt="Rating image not found.">
+                     {% elif data.CouponProductRating >= 4.5 and data.CouponProductRating <= 5.0 %}
+                         <img class="ratingImage" src="{% static 'public-section/imagesANDicons/ratings/5.PNG' %}" alt="Rating image not found.">
+                     {% endif %}
+
+                     <span class="totalRatings">({{ data.CouponProductTotalRating }}+)</span>
+                 </div>
+               <br>
+                <div class="pricingDiv">
+                    <h4 class="displayPrice">${{ data.CouponProductDisplayPrice }}</h4>
+                    <span class="discountSpan">{{ data.CouponProductPrice|discount:data.CouponProductDisplayPrice }}%</span>
+                    <h4 class="realPrice">${{ data.CouponProductPrice }}</h4>
+
+                </div>
+
+                 <div class="back-cover">
+                     <div class="back-cover-body">
+                         <a href="{{ data.CouponLink }}" class="btn couponBtn" target="_blank">Get Deal</a><br><br>
+                         <a class="btn detailsBtn" href="#">View details</a>
+                     </div>
+
+                 </div>
+             </div>
+          {% endfor %}
+
+
+ </div> <!-- /container -->
+
+<br><br>
+
+
+
+<div class="container">
+              <!--Pagination-->
+
+
+    <div class="paginationDiv">
+
+    <ul class="pagination">
+        {% if Data.has_previous %}
+            <li class="page-item btn paginationBtn"><a  href="?page={{ Data.previous_page_number }}"><</a></li>
+        {% endif  %}
+
+        {% for num in Data.paginator.page_range %}
+
+            {% if Data.number == num %}
+                <li class="page-item"><a class="page-link" href="#" style="font-weight: bold;color: indigo">{{ num }}</a></li>
+
+            {% elif num > Data.number|add:'-3' and num < Data.number|add:'3' %}
+                <li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+            {% endif %}
+        {% endfor %}
+
+        {% if Data.has_next %}
+            <li class="page-item btn paginationBtn"><a  href="?page={{ Data.next_page_number }}">></a></li>
+        {% endif %}
+
+    </ul>
+
+    </div>
+</div>
+
+
+
+{% endblock %}

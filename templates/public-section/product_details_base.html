@@ -1,0 +1,289 @@
+{% load static %}
+{% load filters %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <title>{% block title %}   {% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- SEO tags -->
+    <meta charset="UTF-8">
+    <meta name="description" content="{% block description %}  {% endblock %}">
+    <meta name="keywords" content="{% block keywords %}  {% endblock %}">
+    <meta name="author" content="{% block author %}  {% endblock %}">
+    <meta name="robots" content="{% block robots %} {% endblock %}">
+
+    <!-- OG open graph tags for facebook -->
+    <meta property="og:title" content="{% block ogtitle %}  {% endblock %}">
+    <meta property="og:description" content="{% block ogdescription %}  {% endblock %}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{% block ogurl %}  {% endblock %}">
+    <meta property="og:image" content="{% block ogimage %}  {% endblock %}">
+    <meta property="og:site_name" content="Mixsaver">
+
+    <!-- Twitter tags -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="{% block twittertitle %} {% endblock %}">
+    <meta property="twitter:description" content="{% block twitterdescription %} {% endblock %}">
+
+
+    <meta property="twitter:image" content="{% block twitterimage %} {% endblock %}">
+
+    <link rel="canonical" href="{% block pageurl %} {% endblock %}">
+    
+    
+
+    <!-- Bootstrap and fontawesome -->
+
+    <link rel="shortcut icon" href="https://mixsaver.com{% static 'public-section/imagesANDicons/mixsaver.ico' %}" type="image/x-icon" />
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+    <link rel="stylesheet" href="{% static 'public-section/other_libaries/coursel/coursel.css' %}">
+    <!------ Include the above in your HEAD tag ---------->
+
+
+
+
+
+
+    <!-- Index css -->
+    <link rel="stylesheet" href="{% static 'public-section/styles/product_details_base.css' %}"/>
+
+
+
+     <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q5G8Q4ZQX0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-Q5G8Q4ZQX0');
+    </script>
+
+    <script data-ad-client="ca-pub-1804052143915893" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+    {% block stylesheet %} {% endblock %}
+
+
+</head>
+<body>
+
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+
+
+<div class="container-fluid fixed-top" id="header">
+
+
+<nav class="navbar navbar-expand-lg">
+
+  <a class="navbar-brand" href="{% url 'Home' %}"><img src="{% static 'public-section/imagesANDicons/logo.png' %}" alt="Logo not found"></a>
+  <button style="text-align: center" class="navbar-toggler menuIcon" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon">
+        <i style="color: white;font-size: 34px;" class="fa fa-align-justify" aria-hidden="true" id="mobileMenuIcon"></i>
+        <i style="display:none;color: white;font-size: 34px;" class="fa fa-close" aria-hidden="true" id="mobileMenuCloseIcon"></i>
+    </span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav align-center ml-auto mr-auto">
+      <li class="nav-item d-flex main-menu">
+        <a class="nav-link p-2" href="{% url 'Home' %}">Home</a>
+      </li>
+      <li class="nav-item d-flex main-menu">
+        <a class="nav-link p-2" href="{% url 'TodayTopDeals' %}">Today Top Deals</a>
+      </li>
+
+      <li class="nav-item d-flex main-menu">
+        <a class="nav-link p-2" href="{% url 'HotDeals' %}">Hot Deals</a>
+      </li>
+
+
+        <li class="nav-item dropdown">
+        <a class="nav-link p-2 dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Coupons
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            {% for brand in AllBrands %}
+                <a class="dropdown-item" href="{% url 'DynamicBrandsProductsSearch' brand.BrandSlug %}">{{ brand.BrandName }}</a>
+            {% endfor %}
+        </div>
+       </li>
+
+
+
+      <li class="nav-item dropdown">
+        <a class="nav-link p-2 dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Brands
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            {% for brand in AllBrands %}
+                <a class="dropdown-item" href="{% url 'BrandAllProducts' brand.BrandSlug %}">{{ brand.BrandName }}</a>
+            {% endfor %}
+        </div>
+       </li>
+
+
+     <li class="nav-item d-flex main-menu">
+        <a class="nav-link p-2" href="{% url 'BlogView' %}">Blog</a>
+      </li>
+     
+
+    {% if request.user.is_authenticated %}
+
+         <li class="nav-item dropdown">
+          <a class="nav-link p-2 dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          {{ request.user.first_name|decrypt:request.user.first_name }}
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{% url 'DashboardView' %}">Dashboard</a>
+            <a class="dropdown-item" href="{% url 'MyDeals' %}">My Deals</a>
+            <a class="dropdown-item" href="{% url 'Settings' %}">Settings</a>
+          <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="{% url 'LogoutUser' %}">Logout</a>
+        </div>
+       </li>
+        {% else %}
+    </ul>
+
+        <a class="btn my-2 my-sm-0 d-flex justify-content-center" id="loginBtn" href="{% url 'LoginView' %}">Login</a>
+        &nbsp;&nbsp;
+        <a class="btn my-2 my-sm-0 d-flex justify-content-center" id="signupBtn" href="{% url 'SignUpView' %}">Sign Up</a>
+       {% endif %}
+  </div>
+
+</nav>
+
+  </div>
+
+{% block content %}
+
+
+
+{% endblock %}
+
+
+<!--***************Footer start*********************-->
+  <br>
+<!-- Footer -->
+        <footer>
+        	<div class="footer-top" id="footer">
+		        <div class="container">
+		        	<div class="row">
+		        		<div class="col-md-3 footer-about">
+		        			<img class="logo-footer" src="{% static 'public-section/imagesANDicons/logo.png' %}" alt="Footer logo not found." data-at2x="assets/img/logo.png">
+		        			<p>
+		        				We bring best deals for you of all big and small brands. Always visit mixsaver.com for exclusive deals and offers.
+		        			</p>
+		        			<p><a href="{% url 'HotDeals' %}">Get Exclusive Deals</a></p>
+	                    </div>
+		        		<div class="col-md-3 footer-contact">
+		        			<h3 class="footersectionTitle">Contact</h3>
+		                	<p><i class="fa fa-map-marker"></i>25100 Peshawar, KPK</p>
+		                	<p><i class="fa fa-envelope"></i> Email: <a href="mailto:mixsaverofficial@gmail.com">mixsaverofficial@gmail.com</a></p>
+	                    </div>
+	                    <div class="col-md-3 footer-links">
+	                    			<h3 class="footersectionTitle">Links</h3>
+	                    			<p><a class="scroll-link" href="{% url 'Home' %}">Home</a></p>
+	                    			<p><a href="{% url 'TodayTopDeals' %}">Today Top Deals</a></p>
+	                    			<p><a href="{% url 'Articles' 'privacy-policy' %}">Privacy Policy</a></p>
+                                    <p><a href="{% url 'Articles' 'terms-use' %}">Terms of Use</a></p>
+                                    <p><a href="{% url 'Sitemap' %}">Sitemap</a></p>
+	                    			<p><a href="{% url 'ContactUsView' %}">Contact Us</a></p>
+	                    			
+	                    			
+	                    			<p><a href="{% url 'BlogView' %}">Blog</a></p>
+	                    			
+	                    			<p><a href="https://mixsaver.com/article/guest-article/">Guest Article</a></p>
+	                    			
+	                    		</div>
+
+                                 <div class="col-md-3">
+                                    <h3 class="footersectionTitle">Newsletter</h3>
+	                    			<p>Subscribe for our newsletter.</p>
+                                     <form method="post" id="newsletterForm" action="{% url "NewsletterView" %}">
+                                         {% csrf_token %}
+                                          <div class="form-group ">
+                                     <input type="email" name="email" class="form-control m-auto" placeholder="Enter email" required>
+                                                          </div>
+                                         <button class="form-control m-auto" type="submit">Subscribe</button>
+                                     </form>
+
+                                     <div class="playStoreImagesDiv">
+                                         <h5 class="footersectionTitle">Download Our App</h5>
+                                         <a href="{% url 'MobileApp' %}?app=IOS">
+                                         <img src="{% static 'public-section/imagesANDicons/applestore.png' %}" alt="Download IOS App">
+                                             </a>
+                                         <a href="{% url 'MobileApp' %}?app=Android">
+                                         <img src="{% static 'public-section/imagesANDicons/playstore.png' %}" alt="Download Android App">
+                                             </a>
+                                     </div>
+	                    		</div>
+
+
+
+
+		            </div>
+		        </div>
+	        </div>
+
+
+	        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	        <div class="footer-bottom">
+	        	<div class="container">
+	        		<div class="row">
+	           			<div class="col-md-6 footer-copyright">
+	                    	&copy; Copyright All Right Reversed &nbsp;<a href="{% url 'Home' %}">Mixsaver</a>.
+                            &nbsp;Developed by <a href="https://20services.com/">20services</a>
+	                    </div>
+	           			<div style="color:white" class="col-md-6 footer-social">
+	           			    
+	           			    
+							
+	                    </div>
+	           		</div>
+	        	</div>
+	        </div>
+        </footer>
+
+
+
+  <!--Arrow up start-->
+  <a href="#" id="myScrollUp" onclick="funtop()">
+  <div class="arrowUp">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+  </div>
+      </a>
+
+
+
+
+
+
+<!-- Jquery and javascript just for the top arrow button -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- index page scripts -->
+<script src="{% static 'public-section/java/index.js' %}"></script>
+
+<script src="{% static 'public-section/java/product-details.js' %}"></script>
+<script src="{% static 'public-section/other_libaries/coursel/coursel.java' %}"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="	sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+</body>
+</html>

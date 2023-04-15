@@ -1,0 +1,51 @@
+{% extends 'user-account-section/base.html' %}
+{% block title %}Activity Log{% endblock %}
+
+{% block content %}
+
+          <!-- Page Heading -->
+    <h1 class="h3 mb-4 text-gray-800">Activity Log</h1>
+
+
+          <!-- DataTales Example -->
+          <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">Login History</h6>
+            </div>
+            <div class="card-body">
+
+              <div class="table-responsive">
+              {% if getRecord.count == 0 %}
+                        <p>You have no login history yet.</p>
+                  {% else %}
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>No.</th>
+                      <th>Login Date</th>
+                      <th>IP Address</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+
+
+
+                      {% for data in getRecord %}
+                       <tr>
+                      <td>{{ forloop.counter }}</td>
+                      <td>{{ data.Date }}</td>
+                      <td>{{ data.IpAddress }}</td>
+                     </tr>
+                  {% endfor %}
+
+
+                  </tbody>
+                </table>
+              {% endif %}
+              </div>
+            </div>
+
+          </div>
+
+
+{% endblock %}

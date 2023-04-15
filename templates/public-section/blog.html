@@ -1,0 +1,146 @@
+{% extends 'public-section/base.html' %}
+{% load static %}
+{% block title %}Blog - MixSaver{% endblock %}
+
+{% block description %}MixSaver team works hard to bring quality content to you. In the blog section, you can find the latest uploaded content about different topics. Visit the blog.{% endblock %}
+{% block keywords %}mixsaver blog,blog mixsaver,blog{% endblock %}
+{% block author %}20Services{% endblock %}
+{% block robots %}index, follow{% endblock %}
+
+{% block ogtitle %}Blog - MixSaver{% endblock %}
+{% block ogdescription %}MixSaver team works hard to bring quality content to you. In the blog section, you can find the latest uploaded content about different topics.{% endblock %}
+{% block ogurl %}https://mixsaver.com/blog/{% endblock %}
+{% block ogimage %}https://mixsaver.com{% static 'public-section/imagesANDicons/mixsaver-logo-2.png' %}{% endblock %}
+
+{% block twittertitle %}Blog{% endblock %}
+{% block twitterdescription %}20Services team works hard to bring quality content to you. In the blog section, you can find the latest uploaded content about different topics.{% endblock %}
+{% block twitterimage %}https://mixsaver.com{% static 'public-section/imagesANDicons/mixsaver-logo-2.png' %}{% endblock %}
+
+{% block pageurl %}https://mixsaver.com/blog/{% endblock %}
+
+{% block stylesheet %}
+  <style>
+body{
+  background-color:#F7F7F7;
+}
+
+.Content-Container {
+     background-color: white;
+     border-radius: 10px;
+     padding: 25px 70px 25px 70px;
+     border: 1px solid gainsboro;
+    margin-top: 100px;
+     -webkit-box-shadow: -1px 0px 20px -13px rgba(0,0,0,0.8);
+    -moz-box-shadow: -1px 0px 20px -13px rgba(0,0,0,0.8);
+    box-shadow: -1px 0px 20px -13px rgba(0,0,0,0.8);
+    width: 80%;
+    margin-left: 10%;
+}
+
+.Content-Container h1{
+    font-family: Calibri;
+    font-size: 38px;
+    color: #000;
+}
+.Content-Container h3{
+    font-family: Calibri;
+    font-size: 30px;
+    color: #000;
+}
+
+.Content-Container p{
+    font-family: Calibri;
+    font-size: 20px;
+    color: #252626;
+    line-height: 20px;
+
+}
+
+.Content-Container a{
+    color: indigo;
+    text-decoration: none;
+}
+.Content-Container a:hover{
+    color: green;
+}
+
+/* Designing for mobile screens*/
+ @media only screen and (max-width: 480px) {
+    .Content-Container{
+        width: 90%;
+        margin-left: 5%;
+        padding: 15px 15px 10px 15px;
+    }
+     .Content-Container h3{
+        font-family: Calibri;
+        font-size: 25px;
+        color: #000;
+    }
+
+.Content-Container p{
+    font-family: Calibri;
+    font-size: 1.1rem;
+    color: darkslategrey;
+    line-height: 22px;
+
+}
+ }
+
+  </style>
+{% endblock %}
+
+
+
+{% block content %}
+<div class="Content-Container">
+    <h1>Blog</h1><br>
+
+    <div class="row">
+        <div class="col-md-12 col-lg-12 col-sm-12">
+            {% for article in Data %}
+                <p><a href="{% url 'Articles' article.ArticleSlug %}">{{ article.ArticleTitle }}</a></p>
+                <hr>
+            {% endfor %}
+        </div>
+
+
+      <!-- Pagination start -->
+            <div>
+                  <ul class="pagination">
+
+                    {% if Data.has_previous %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ Data.previous_page_number }}" tabindex="-1"><i class="fa fa-angle-left"></i></a>
+                        </li>
+                    {% else %}
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1"><i class="fa fa-angle-left"></i></a>
+                        </li>
+                    {% endif %}
+
+                    {% for num in Data.paginator.page_range %}
+                        {% if Data.number == num %}
+                            <li class="page-item active"><a class="page-link" href="#">{{ num }}</a></li>
+                        {% elif num > Data.number|add:"-3" and num < Data.number|add:"3" %}
+                            <li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+
+
+                  {% if Data.has_next %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ Data.next_page_number }}"><i class="fa fa-angle-right"></i></a>
+                        </li>
+                    {% else %}
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" ><i class="fa fa-angle-right"></i></a>
+                        </li>
+                    {% endif %}
+
+                  </ul>
+           </div>
+
+    </div>
+
+</div><br>
+{% endblock %}

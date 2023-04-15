@@ -1,0 +1,163 @@
+{% extends 'public-section/base.html' %}
+{% load static %}
+{% block title %}Sitemap - Mixsaver{% endblock %}
+
+{% block description %}Explore the site map of mixsaver.com and navigate between
+    the pages easily. The sitemap of mixsaver.com is very clear and simple.
+{% endblock %}
+{% block keywords %}mixsaver sitemap,sitemap mixsaver,sitemap of mixsaver.com,sitemap{% endblock %}
+{% block author %}mixsaver{% endblock %}
+{% block robots %}index, follow{% endblock %}
+
+{% block ogtitle %}Sitemap - Mixsaver{% endblock %}
+{% block ogdescription %}Explore the site map of mixsaver.com and navigate between the pages easily.
+    The sitemap of mixsaver.com is very clear and simple.{% endblock %}
+{% block ogurl %}https://mixsaver.com/sitemap/{% endblock %}
+{% block ogimage %}https://mixsaver.com{% static 'public-section/imagesANDicons/mixsaver-logo-2.png' %}{% endblock %}
+
+{% block twittertitle %}Sitemap - Mixsaver{% endblock %}
+{% block twitterdescription %}Explore the site map of mixsaver.com and navigate between the pages easily.
+    The sitemap of mixsaver.com is very clear and simple.
+{% endblock %}
+
+{% block twitterimage %}https://mixsaver.com{% static 'public-section/imagesANDicons/mixsaver-logo-2.png' %}{% endblock %}
+
+{% block pageurl %}https://mixsaver.com/sitemap/{% endblock %}
+
+
+{% block stylesheet %}
+  <style>
+body{
+  background-color:#F7F7F7;
+}
+
+.Content-Container {
+     background-color: white;
+     border-radius: 10px;
+     padding: 25px 70px 25px 70px;
+     border: 1px solid gainsboro;
+    margin-top: 100px;
+     -webkit-box-shadow: -1px 0px 20px -13px rgba(0,0,0,0.8);
+    -moz-box-shadow: -1px 0px 20px -13px rgba(0,0,0,0.8);
+    box-shadow: -1px 0px 20px -13px rgba(0,0,0,0.8);
+    width: 80%;
+    margin-left: 10%;
+}
+.Content-Container h1{
+    font-family: Calibri;
+    font-size: 38px;
+    color: #000;
+}
+.Content-Container h3{
+    font-family: Calibri;
+    font-size: 30px;
+    color: #000;
+}
+
+.Content-Container p{
+    font-family: Calibri;
+    font-size: 20px;
+    color: #252626;
+    line-height: 20px;
+
+}
+
+.Content-Container a{
+    color: indigo;
+    text-decoration: none;
+}
+.Content-Container a:hover{
+    color: green;
+}
+
+/* Designing for mobile screens*/
+ @media only screen and (max-width: 480px) {
+    .Content-Container{
+        width: 90%;
+        margin-left: 5%;
+        padding: 15px 15px 10px 15px;
+    }
+     .Content-Container h3{
+        font-family: Calibri;
+        font-size: 25px;
+        color: #000;
+    }
+
+.Content-Container p{
+    font-family: Calibri;
+    font-size: 1.1rem;
+    color: darkslategrey;
+    line-height: 22px;
+
+}
+ }
+
+  </style>
+{% endblock %}
+
+
+
+{% block content %}
+<div class="Content-Container">
+    <h1>Sitemap</h1><br>
+    <div class="row">
+        <div class="col-md-4 col-lg-4 col-sm-12">
+            <h3>Brands</h3>
+            <p><a href="{% url 'AllCouponWebsites' %}">Brands</a></p>
+        </div>
+
+        <div class="col-md-4 col-lg-4 col-sm-12">
+            <h3>Trendings</h3>
+            <p><a href="{% url 'TodayTopDeals' %}">Today top deals</a></p>
+            <p><a href="{% url 'HotDeals' %}">Hot deals</a></p>
+        </div>
+
+
+        <div class="col-md-4 col-lg-4 col-sm-12">
+            <h3>Privacy Policy</h3>
+            <p><a href="{% url 'Articles' 'privacy-policy' %}">Privacy policy</a></p>
+        </div>
+
+
+        <div class="col-md-4 col-lg-4 col-sm-12">
+            <h3>Terms of Use</h3>
+            <p><a href="{% url 'Articles' 'terms-use' %}">Terms of use</a></p>
+        </div>
+
+
+        <div class="col-md-4 col-lg-4 col-sm-12">
+            <h3>Contact Us</h3>
+            <p><a href="{% url 'ContactUsView' %}">Contact us</a></p>
+        </div>
+
+
+        <div class="col-md-4 col-lg-4 col-sm-12">
+            <h3>Login</h3>
+            <p><a href="{% url 'LoginView' %}">Login</a></p>
+        </div>
+
+        <div class="col-md-4 col-lg-4 col-sm-12">
+            <h3>Sign up</h3>
+            <p><a href="{% url 'SignUpView' %}">Signup</a></p>
+        </div>
+
+
+        <div class="col-md-4 col-lg-4 col-sm-12">
+            <h3>Coupon codes</h3>
+            {% for brand in AllBrands %}
+                <p><a href="{% url 'BrandAllProducts' brand.BrandSlug %}">{{ brand.BrandName }} Coupons Codes</a></p>
+            {% endfor %}
+        </div>
+
+
+        <div class="col-md-4 col-lg-4 col-sm-12">
+            <h3>Deals</h3>
+            {% for brand in AllBrands %}
+                <p><a href="{% url 'DynamicBrandsProductsSearch' brand.BrandSlug %}">{{ brand.BrandName }} Deals</a></p>
+            {% endfor %}
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}

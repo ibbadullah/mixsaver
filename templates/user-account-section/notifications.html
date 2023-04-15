@@ -1,0 +1,60 @@
+{% extends 'user-account-section/base.html' %}
+{% block title %}Notifications{% endblock %}
+
+{% block stylesheet %}
+  <style>
+    .timeSpan{
+      font-size: 13px;
+    }
+    .notificationTitle {
+      color: #1f1a2b;
+      text-decoration: none;
+    }
+    .notificationTitle:hover{
+      color: indigo;
+      text-decoration: none;
+    }
+    .readBtn{
+      color: midnightblue;
+      text-decoration: none;
+      margin-top: 5px !important;
+      font-weight: bold;
+    }
+    .readBtn:hover{
+      text-decoration: none;
+      color: indigo;
+    }
+  </style>
+
+{% endblock %}
+
+{% block content %}
+
+              <!-- Page Heading -->
+          <h1 class="h3 mb-4 text-gray-800">Notifications & Alerts</h1>
+
+
+          <!-- DataTales Example -->
+          <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">Notifications</h6>
+            </div>
+            <div class="card-body">
+              <div class="container">
+                {% for notification in getAllNotifactions %}
+                      <span class="timeSpan">{{ notification.DateTime }}</span>
+                      <a href="{% url 'GetSingleNotificationDetails' id=notification.id %}" class="notificationTitle"><h5>{{ notification.Title }}</h5></a>
+                      <a href="{% url 'GetSingleNotificationDetails' id=notification.id %}" class="readBtn">Read..</a>
+                      <hr>
+                {% endfor %}
+
+
+              </div>
+            </div>
+          </div>
+
+{% endblock %}
+
+
+
+

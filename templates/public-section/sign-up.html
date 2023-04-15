@@ -1,0 +1,229 @@
+{% extends 'public-section/base.html' %}
+{% load static %}
+{% block title %}Sign up | Create a Mixsaver account{% endblock %}
+{% block description %}Create an mixsaver account and get exclusive deals of all big & small brands.{% endblock %}
+{% block keywords %}mixsaver sign up, sign up mixsaver, sign up page mixsaver.com{% endblock %}
+{% block author %}Mixsaver{% endblock %}
+{% block robots %}index, follow{% endblock %}
+{% block ogtitle %}Create a Mixsaver account{% endblock %}
+{% block ogdescription %}Create an mixsaver account and get exclusive deals of all big brands.{% endblock %}
+{% block ogurl %}{{ pageUrl }}{% endblock %}
+{% block ogimage %}https://mixsaver.com{% static 'public-section/imagesANDicons/mixsaver-logo-2.png' %}{% endblock %}
+
+{% block twittertitle %}Create a Mixsaver account{% endblock %}
+{% block twitterdescription %}Create an mixsaver account and get exclusive deals of all big brands.{% endblock %}
+
+{% block twitterimage %}https://mixsaver.com{% static 'public-section/imagesANDicons/mixsaver-logo-2.png' %}{% endblock %}
+
+{% block pageurl %}{{ pageUrl }}{% endblock %}
+
+{% block stylesheet %}
+
+<style>
+      body {
+          background-color:#F7F7F7;
+      }
+
+ .formBackgroundDiv{
+     margin-top: 140px;
+     margin-bottom: 50px;
+     background-color: white;
+     border-radius: 10px;
+     padding: 35px 70px 35px 70px;
+     border: 1px solid gainsboro;
+     -webkit-box-shadow: -1px 0px 20px -13px rgba(0,0,0,0.8);
+     -moz-box-shadow: -1px 0px 20px -13px rgba(0,0,0,0.8);
+     box-shadow: -1px 0px 20px -13px rgba(0,0,0,0.8);
+ }
+
+.formBackgroundDiv h3{
+    margin-bottom: 0px;
+    font-size: 22px;
+}
+
+.formTag input{
+
+    height: 40px;
+    border: 1px solid gray;
+}
+.formTag input:focus{
+
+    border: 1px solid indigo;
+    transition: 0.5s;
+    box-shadow: none;
+    color: indigo;
+
+}
+.formTag button{
+    width: 100%;
+    height: 40px;
+    background-color: indigo;
+    border: none;
+}
+.formTag button:hover{
+    border: 1px solid indigo;
+    background-color: white;
+    color: indigo;
+}
+
+.formTag button:focus{
+    border: 1px solid indigo;
+    background-color: white;
+    color: indigo;
+    box-shadow: none;
+     box-shadow: none;
+}
+
+.formTag select{
+    height: 40px;
+    border: 1px solid gray;
+
+
+}
+.formTag select:focus{
+    border: 1px solid indigo;
+    transition: 0.5s;
+     box-shadow: none;
+    color: indigo;
+
+}
+.formTag p{
+    font-size: 12px;
+    margin-top: 12px!important;
+    font-family: Calibri;
+}
+
+.formTag a{
+    text-decoration: none;
+    color: indigo;
+}
+.formTag a:hover{
+    text-decoration: none;
+    color:#000000;
+}
+.formTag h6{
+    font-weight: normal;
+}
+
+
+
+
+
+/*#########################Start of ipad pro screens###########################*/
+@media only screen and (max-width:1024px) {
+
+.formBackgroundDiv {
+    padding: 30px 50px 20px 30px;
+}
+.formBackgroundDiv h3{
+    margin-bottom: 0px;
+    font-size: 24px;
+}
+}
+ /*#########################End of ipad pro screens###########################*/
+
+
+
+
+
+
+
+
+
+/*#########################Start of tablets screens###########################*/
+@media only screen and (max-width:768px) {
+
+.formBackgroundDiv {
+    padding: 20px 30px 20px 30px;
+}
+.formBackgroundDiv h3{
+    margin-bottom: 0px;
+    font-size: 24px;
+}
+}
+ /*#########################End of tablets screens###########################*/
+
+
+
+
+
+
+
+ /*#########################Start of mobile screens###########################*/
+@media only screen and (max-width:480px) {
+
+.formBackgroundDiv {
+    padding: 20px 12px 20px 12px;
+    margin-top: 90px;
+    margin-bottom: 0px;
+}
+.formBackgroundDiv h3{
+    margin-bottom: 0px;
+    font-size: 18px;
+}
+}
+  /*#########################End of mobile screens###########################*/
+
+
+
+
+</style>
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container-fluid">
+<div class="row">
+    <div class="col-sm-10 col-md-10 col-lg-6 m-auto">
+ <div class="formBackgroundDiv">
+     {% for message in messages %}
+         <div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>Opps!</strong> {{ message }}
+
+           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+     {% endfor %}
+
+     {% if not messages %}
+        <h3>Create an account</h3>
+     {% endif %}
+<form class="formTag" method="post" action="{% url 'SignUpView' %}">
+    {% csrf_token %}
+    <br>
+    <div class="form-group">
+    <input type="text" name="first-name" class="form-control m-auto" placeholder="First name" required>
+  </div>
+
+    <div class="form-group ">
+    <input type="text" name="last-name" class="form-control m-auto" placeholder="Last name" required>
+  </div>
+
+    <div class="form-group ">
+    <input type="text" name="username" class="form-control m-auto" placeholder="Username" required>
+  </div>
+
+  <div class="form-group">
+    <input type="email" name="email" class="form-control"  placeholder="Email" required>
+  </div>
+
+    <div class="form-group">
+    <input type="password" name="password" class="form-control" placeholder="Enter password" required>
+  </div>
+  <button type="submit" class="btn btn-primary">Sign Up</button>
+    <p class="text-center">By Signing Up, you agree with our <a href="{% url 'Articles' 'terms-use' %}">Terms of Use</a> and <a href="{% url 'Articles' 'privacy-policy' %}">Privacy Policy.</a></p>
+    <hr>
+    <h6 class="text-center">Already have an account? <a href="{% url 'LoginView' %}" style="font-weight: bold">Login</a></h6>
+</form>
+</div>
+
+
+
+
+  </div>
+ </div>
+</div>
+{% endblock %}
+

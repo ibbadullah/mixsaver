@@ -1,0 +1,130 @@
+{% extends 'public-section/base.html' %}
+{% load static %}
+{% block title %}404 page not found{% endblock %}
+{% block description %}Sorry we didn't find the page.{% endblock %}
+{% block author %}Urgent Coupon{% endblock %}
+{% block robots %}noindex, nofollow{% endblock %}
+
+{% block stylesheet %}
+    <style>
+
+        body {
+            color: darkslategrey;
+
+            }
+
+        .content404{
+            line-height: 1.5;
+            font-family: "Roboto", sans-serif;
+            text-align: center;
+            font-family: sans-serif;
+            margin-bottom: 100px;
+        }
+
+        .button {
+          font-weight: 300;
+             background-color: orange;
+            border: 1px solid orange;
+          color: white;
+          font-size: 1.2em;
+          text-decoration: none;
+          padding: 10px;
+          border-radius: 3px;
+          position: relative;
+            text-align: center;
+
+        }
+
+        .button:hover {
+
+            border: 1px solid orange;
+          color: white;
+            text-decoration: none;
+            opacity: 0.9;
+
+        }
+
+        .p {
+          font-size: 2em;
+          text-align: center;
+          font-weight: 100;
+            color: white;
+        }
+
+        h1 {
+          text-align: center;
+          font-size: 200px;
+          font-weight: 200;
+          margin-top: 100px;
+          color: orange;
+          text-shadow: #1e0361 1px 1px,
+          #1e0361 2px 2px, #1e0361 3px 3px,
+          #1e0362 4px 4px, #1e0363 5px 5px,
+          #1e0361 6px 6px, #1e0362 7px 7px,
+          #1e0361 8px 8px, #1e0361 9px 9px,
+          #1e0361 10px 10px, #1e0361 11px 11px,
+          #1e0361 12px 12px, #1e0361 13px 13px,
+          #1e0361 14px 14px, #1e0361 15px 15px,
+          #1e0361 16px 16px, #1e0361 17px 17px,
+          #1e0361 18px 18px, #1e0361 19px 19px,
+          #1e0361 20px 20px, #1e0361 21px 21px,
+          #1e0361 22px 22px, #1e0361 23px 23px,
+          #1e0361 24px 24px, #1e0361 25px 25px,
+          #1e0361 26px 26px, #1e0361 27px 27px,
+          #1e0361 28px 28px, #1e0361 29px 29px, #1e0361 30px 30px,
+          #1e0361 31px 31px, #1e0361 32px 32px, #1e0361 33px 33px,
+          #1e0361 34px 34px, #1e0361 35px 35px, #1e0361 36px 36px, #1e0361 37px 37px,
+          #1e0361 38px 38px, #1e0361 39px 39px, #1e0361 40px 40px, #1e0361 41px 41px,
+          #1e0361 42px 42px, #1e0361 43px 43px, #1e0361 44px 44px, #1e0361 45px 45px,
+          #1e0361 46px 46px,
+          #1e0361 47px 47px, #1e0361 48px 48px, #1e0361 49px 49px, #1e0361 50px 50px, #1e0361 51px 51px,
+          #1e0361 52px 52px, #1e0361 53px 53px, #1e0361 54px 54px, #1e0361 55px 55px, #1e0361 56px 56px,
+          #1e0361 57px 57px, #1e0361 58px 58px, #1e0361 59px 59px, #1e0361 60px 60px, #1e0361 61px 61px,
+          #1e0363 62px 62px, #1e0361 63px 63px, #1e0361 64px 64px, #1e0361 65px 65px, #1e0361 66px 66px,
+          #1e0364 67px 67px, #1e0361 68px 68px, #1e0361 69px 69px, #1e0361 70px 70px, #1e0361 71px 71px,
+          #1e0365 72px 72px, #1e0361 73px 73px, #1e0361 74px 74px, #1e0361 75px 75px, #1e0361 76px 76px,
+          #1e0361 77px 77px, #1e0361 78px 78px, #1e0361 79px 79px, #1e0361 80px 80px, #1e0361 81px 81px,
+          #1e0361 82px 82px, #1e0361 83px 83px, #1e0361 84px 84px, #1e0361 85px 85px, #1e0361 86px 86px,
+          #1e0361 87px 87px, #1e0361 88px 88px, #1e0361 89px 89px, #1e0361 90px 90px, #1e0361 91px 91px,
+          #1e0361 92px 92px, #1e0361 93px 93px, #1e0361 94px 94px, #1e0361 95px 95px, #1e0361 96px 96px,
+          #1e0361 97px 97px, #1e0361 98px 98px, #1e0361 99px 99px, #1e0361 100px 100px, #1e0361 101px 101px,
+          #1e0361 102px 102px, #1e0361 103px 103px, #1e0361 104px 104px, #1e0361 105px 105px, #1e0361 106px 106px,
+          #1e0361 107px 107px, #1e0361 108px 108px, #1e0361 109px 109px, #1e0361 110px 110px, #1e0361 111px 111px,
+          #1e0361 112px 112px, #1e0361 113px 113px, #1e0361 114px 114px, #1e0361 115px 115px, #1e0361 116px 116px,
+          #1e0361 117px 117px, #1e0361 118px 118px, #1e0361 119px 119px, #1e0361 120px 120px, #1e0361 121px 121px,
+          #1e0361 122px 122px, #1e0361 123px 123px, #1e0361 124px 124px, #1e0361 125px 125px, #1e0361 126px 126px,
+          #1e0361 127px 127px, #1e0361 128px 128px, #1e0361 129px 129px, #1e0361 130px 130px, #1e0361 131px 131px,
+          #1e0361 132px 132px, #1e0361 133px 133px, #1e0361 134px 134px, #0072ee 135px 135px, #0072ee 136px 136px,
+          #1e0361 137px 137px, #1e0361 138px 138px, #1e0361 139px 139px, #0072ef 140px 140px, #1e0361  141px 141px,
+          #1e0361 142px 142px, #1e0361 143px 143px, #1e0361 144px 144px, #0073f0 145px 145px, #1e0361 146px 146px,
+          #1e0361 147px 147px, #1e0361 148px 148px, #1e0361 149px 149px, #0074f2 150px 150px, #1e0361  151px 151px,
+          #1e0361 152px 152px, #1e0361 153px 153px, #1e0361 154px 154px, #0074f3 155px 155px, #1e0361  156px 156px,
+          #1e0361 157px 157px, #1e0361 158px 158px, #1e0361 159px 159px, #0075f4 160px 160px, #0075f5 161px 161px,
+          #1e0361 162px 162px, #1e0361 163px 163px, #1e0361 164px 164px, #0075f6 165px 165px, #0075f6 166px 166px,
+          #1e0361 167px 167px, #1e0361 168px 168px, #1e0361 169px 169px, #0076f7 170px 170px, #0076f7 171px 171px,
+          #1e0361 172px 172px, #1e0361 173px 173px, #1e0361 174px 174px, #0077f8 175px 175px, #0077f8 176px 176px,
+          #1e0361 177px 177px, #1e0361 178px 178px, #1e0361 179px 179px, #0077f9 180px 180px, #0077fa 181px 181px,
+          #1e0361 182px 182px, #1e0361 183px 183px, #1e0361 184px 184px, #0078fb 185px 185px, #0078fb 186px 186px,
+          #1e0361 187px 187px, #1e0361 188px 188px, #1e0361 189px 189px, #0078fc 190px 190px, #1e0361 191px 191px,
+          #1e0361 192px 192px, #1e0361 193px 193px, #1e0361 194px 194px, #0079fd 195px 195px, #1e0361 196px 196px,
+         #1e0361 197px 197px, #1e0361 198px 198px, #1e0361 199px 199px, #007aff 200px 200px;
+        }
+
+        @media only screen and (max-width: 480px) {
+
+            h1{font-size: 100px;}
+
+        }
+
+    </style>
+{% endblock %}
+
+
+
+{% block content %}
+<div class="container content404">
+<h1>Oops!</h1>
+<p class="p">Page not found.</p><br>
+<a class="button" href="{% url 'Home' %}">Go to home page</a>
+</div>
+{% endblock %}

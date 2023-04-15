@@ -1,0 +1,241 @@
+{% extends 'public-section/base.html' %}
+{% load static %}
+{% block title %}Contact Us - Mixsaver{% endblock %}
+{% block description %}If you have any query feel free to contact us. We will respond to you as soon as possible. You can also send us an email directly instead of submitting the contact form. {% endblock %}
+{% block keywords %}mixsaver contact email, email address mixsaver, contact mixsaver.com{% endblock %}
+{% block author %}Mixsaver{% endblock %}
+{% block robots %}index, follow{% endblock %}
+
+{% block ogtitle %}Contact - Mixsaver{% endblock %}
+{% block ogdescription %}If you have any queries feel free to contact us.{% endblock %}
+{% block ogurl %}{{ pageUrl }}{% endblock %}
+{% block ogimage %}https://mixsaver.com{% static 'public-section/imagesANDicons/mixsaver-logo-2.png' %}{% endblock %}
+
+{% block twittertitle %}Contact - Mixsaver{% endblock %}
+{% block twitterdescription %}If you have any queries feel free to contact us.{% endblock %}
+
+
+{% block twitterimage %}https://mixsaver.com{% static 'public-section/imagesANDicons/mixsaver-logo-2.png' %}{% endblock %}
+
+{% block pageurl %}{{ pageUrl }}{% endblock %}
+
+{% block stylesheet %}
+<style>
+      body{
+            background-color:#F7F7F7;
+      }
+
+
+      h3{
+            font-size: 24px;
+            font-family: Calibri;
+            font-weight: bold;
+            color: #323232;
+      }
+
+     .myContainer{
+         background-color: white;
+         text-align: center;
+         border-radius: 8px;
+         border: 1px solid gainsboro;
+         -webkit-box-shadow: -1px 0px 20px -13px rgba(0,0,0,0.8);
+         -moz-box-shadow: -1px 0px 20px -13px rgba(0,0,0,0.8);
+         box-shadow: -1px 0px 20px -13px rgba(0,0,0,0.8);
+         padding: 25px 25px 25px 25px;
+      }
+
+
+        .leftContactCol{
+
+        }
+        .leftContactCol h3{
+            margin-top: 0px;
+            color: #323232;
+
+        }
+        .leftContactCol p{
+            margin-top: 0px;
+            font-family: Calibri;
+            font-size: 20px;
+
+        }
+
+
+        .formTag input{
+
+            height: 40px;
+            border: 1px solid gray;
+        }
+        .formTag input:focus{
+            border: 1px solid indigo;
+            box-shadow: none;
+            color: indigo;
+        }
+        .formTag button{
+            width: 100%;
+            height: 40px;
+            background-color: indigo;
+            border: none;
+            color: white;
+        }
+        .formTag button:hover{
+            border: 1px solid indigo;
+            background-color: white;
+            color: indigo;
+        }
+
+        .formTag button:focus{
+            border: 1px solid indigo;
+            background-color: white;
+            color: indigo;
+            box-shadow: none;
+            box-shadow: none;
+        }
+
+        .formTag select{
+            height: 40px;
+            border: 1px solid gray;
+
+
+        }
+        .formTag select:focus{
+            border: 1px solid indigo;
+            box-shadow: none;
+            color: indigo;
+
+        }
+
+        .formTag textarea{
+            resize: none;
+            border: 1px solid gray;
+
+
+        }
+        .formTag textarea:focus{
+            border: 1px solid indigo;
+            box-shadow: none;
+
+        }
+
+        .hr{
+            display: none;
+        }
+
+
+        /*Mobile screen*/
+        @media only screen and (max-width: 480px)  {
+        .myContainer{
+            border-radius: 0px;
+            box-shadow: none;
+            border: none;
+            padding: 10px 15px 5px 15px;
+            top: 50px;
+            background: none;
+
+        }
+        .leftContactCol{
+            margin-top: 50px !important;
+        }
+        .rightContactCol{
+            margin-top: 40px;
+        }
+
+        h2{
+           font-size: 24px;
+            font-family: Calibri;
+            font-weight: bold;
+        }
+        h3{
+            font-size: 21px;
+            font-family: Calibri;
+            font-weight: bold;
+        }
+        p{
+          font-size: 17px;
+            font-family: Calibri;
+        }
+        .hr{
+            display: block;
+        }
+        }
+
+  </style>
+{% endblock %}
+
+
+{% block content %}
+<br><br><br><br>
+
+  <div class="container myContainer">
+    <h2>Contact Us</h2>
+  <p>If you have any query feel free to contact us.</p>
+<hr class="hr">
+<div class="row">
+
+
+
+<!--
+     <div class="col-sm-10 col-md-5 col-lg-5 rightContactCol m-auto">
+ <div class="formBackgroundDiv">
+     <br>
+     {% for message in messages %}
+         <h3 style="color: green">{{ message }}</h3>
+     {% endfor %}
+
+     {% if not messages %}
+         <h3>Get in touch with us</h3>
+     {% endif %}
+
+   <form class="formTag" method="post" action="{% url 'ContactUsView' %}">
+       {% csrf_token %}
+    <br>
+    <div class="form-group">
+    <input type="text" name="full-name" class="form-control m-auto" placeholder="Enter full name" required>
+    </div>
+
+    <div class="form-group ">
+    <input type="text" name="title" class="form-control m-auto" placeholder="Enter message title" required>
+  </div>
+
+    <div class="form-group ">
+    <select name="department" class="form-control" >
+      <option disabled>Select Department</option>
+      <option value="Accounts Department">Accounts</option>
+      <option value="Marketing Department">Marketing</option>
+      <option value="Other">Other</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <input name="email" type="email" class="form-control"  placeholder="Enter email" required>
+  </div>
+
+
+  <div class="input-group">
+  <textarea name="message" class="form-control" aria-label="With textarea" placeholder="Write your message"></textarea>
+</div> <br>
+
+  <button type="submit" class="btn btn-primary">Send</button>
+
+</form>
+</div>
+  </div>
+-->
+
+
+
+
+<hr class="hr">
+
+   <div class="col-sm-10 col-md-10 col-lg-12 leftContactCol m-auto">
+          <h3>Contact Details</h3>
+       <p><i class="fa fa-envelope"></i>&nbsp;Email: mixsaverofficial@gmail.com</p>
+       	<p><i class="fa fa-map-marker"></i>&nbsp;25100 Peshawar, KPK</p>
+      </div>
+
+
+
+ </div>
+</div>
+
+{% endblock %}

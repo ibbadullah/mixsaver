@@ -1,0 +1,261 @@
+{% extends 'public-section/base.html' %}
+{% load static %}
+{% load filters %}
+{% block title %}Coupon Code Websites | Best Coupon Code Websites{% endblock %}
+{% block description %}Best coupon code websites. Get exclusive deals on all big brands. Shop today and save big.{% endblock %}
+{% block keywords %}best coupon code websites,coupon code websites,amazon coupon code websites,best promo code sites{% endblock %}
+{% block author %}mixsaver{% endblock %}
+{% block robots %}index, follow{% endblock %}
+
+{% block ogtitle %}Coupon Code Websites{% endblock %}
+{% block ogdescription %}Best coupon code websites. Get exclusive deals of all big brands. Shop today and save big.{% endblock %}
+{% block ogurl %}https://mixsaver.com/coupon-code-websites/{% endblock %}
+{% block ogimage %}https://mixsaver.com{% static 'public-section/imagesANDicons/mixsaver-logo-2.png' %}{% endblock %}
+
+{% block twittertitle %}Coupon Code Websites{% endblock %}
+{% block twitterdescription %}Get exclusive deals of all big brands. Shop today and save big.{% endblock %}
+
+{% block twitterimage %}https://mixsaver.com{% static 'public-section/imagesANDicons/mixsaver-logo-2.png' %}{% endblock %}
+
+{% block pageurl %}https://mixsaver.com/coupon-code-websites/{% endblock %}
+
+
+{% block stylesheet %}
+    <style>
+
+        body {
+            font-family: Calibri;
+            background-color:#F7F7F7;
+            }
+
+        .wrapper-fostrap {
+          display: table;
+          height: 100%;
+          width: 100%;
+        }
+
+        .container-fostrap {
+          display: table-cell;
+          padding: 1em;
+          text-align: center;
+          vertical-align: middle;
+        }
+
+
+        h1.heading {
+          font-size: 40px;
+          font-weight: 500;
+          margin-top: 90px;
+          color: #000;
+        }
+        @media only screen and (max-width: 480px) {
+          h1.heading {
+            font-size: 35px;
+          font-weight: 500;
+           margin-top: 70px;
+          color: #000;
+          }
+        }
+
+        .card {
+            overflow: hidden;
+          display: block;
+            margin-bottom: 20px;
+            line-height: 1.42857143;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+            transition: box-shadow .25s;
+        }
+        .card:hover {
+          box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+        }
+        .img-card {
+          width: 100%;
+          height:200px;
+          border-top-left-radius:2px;
+          border-top-right-radius:2px;
+          display:block;
+            overflow: hidden;
+        }
+        .img-card img{
+          width: 100%;
+          height: 200px;
+          object-fit:cover;
+          transition: all .25s ease;
+        }
+        .card-content {
+          padding:15px;
+          text-align:left;
+        }
+        .card-title {
+          margin-top:0px;
+          font-weight: 500;
+          font-size: 1.65em;
+        }
+        .card-title a {
+          color: #000;
+          text-decoration: none !important;
+        }
+        .card-read-more {
+          border-top: 1px solid #D4D4D4;
+        }
+        .card-read-more a {
+          text-decoration: none !important;
+          padding:10px;
+          font-weight:600;
+          text-transform: uppercase;
+            color: indigo;
+        }
+
+
+
+
+        /*Pagination*/
+     .paginationDiv{
+        margin-top: 30px;
+        width: 100%;
+
+    }
+    .pagination{
+        justify-content: center;
+    }
+    .paginationBtn{
+        font-family:"Comic Sans MS", cursive, sans-serif;
+        color: white;
+        font-weight: bold;
+        border-radius: 50% !important;
+        background-color: indigo;
+        border: 1px solid gainsboro;
+        outline: none;
+        height: 40px;
+        width: 40px;
+    }
+    .paginationBtn a{
+        color: white;
+        text-decoration: none;
+        line-height: 18px !important;
+        font-size: 18px !important;
+    }
+    .paginationBtn:hover{
+        border: 1px solid indigo;
+        opacity: 0.7;
+    }
+    .paginationBtn a:focus{
+        color: white;
+    }
+
+    .page-item{
+        outline: none;
+    }
+    .page-link{
+        color: darkslategrey;
+         background: none;
+        outline: none;
+        border: none;
+        font-family: Calibri;
+
+
+    }
+    .page-link:hover{
+        background: none;
+        outline: none;
+        border: none;
+        text-decoration: none;
+        color: indigo;
+
+
+    }
+    .page-link:focus{
+         background: none;
+        outline: none;
+        border: none;
+        box-shadow: none;
+    }
+
+
+    </style>
+{% endblock %}
+
+
+{% block content %}
+
+<section class="wrapper-fostrap">
+    <div class="container-fostrap">
+        <div>
+            <h1 class="heading">Coupon code websites & promo codes</h1><br>
+        </div>
+        <div class="content">
+            <div class="container">
+                <div class="row">
+
+                    {% for data in Data %}
+
+
+
+                    <div class="col-xs-12 col-sm-4">
+                        <div class="card">
+                            <a class="img-card" href="{% url 'BrandAllProducts' data.BrandSlug %}">
+                            <img src="{{ data.BrandLogo.url }}" alt="Brand image not found" />
+                          </a>
+                            <div class="card-content">
+                                <h4 class="card-title">
+                                    <a href="{% url 'BrandAllProducts' data.BrandSlug %}">
+                                        {{ data.BrandTitle }}
+                                  </a>
+                                </h4>
+                                <p class="">Active Coupons: 10+
+                                </p>
+                            </div>
+                            <div class="card-read-more">
+                                <a href="{% url 'BrandAllProducts' data.BrandSlug %}" class="btn btn-link btn-block">
+                                    Get exclusive deals
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    {% endfor %}
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<br>
+
+<div class="container">
+              <!--Pagination-->
+
+
+    <div class="paginationDiv">
+
+    <ul class="pagination">
+        {% if Data.has_previous %}
+            <li class="page-item btn paginationBtn"><a  href="?page={{ Data.previous_page_number }}"><</a></li>
+        {% endif  %}
+
+        {% for num in Data.paginator.page_range %}
+
+            {% if Data.number == num %}
+                <li class="page-item"><a class="page-link" href="#" style="font-weight: bold;color: indigo">{{ num }}</a></li>
+
+            {% elif num > Data.number|add:'-3' and num < Data.number|add:'3' %}
+                <li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+            {% endif %}
+        {% endfor %}
+
+        {% if Data.has_next %}
+            <li class="page-item btn paginationBtn"><a  href="?page={{ Data.next_page_number }}">></a></li>
+        {% endif %}
+
+    </ul>
+
+    </div>
+</div>
+
+{% endblock %}

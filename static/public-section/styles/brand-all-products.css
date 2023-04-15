@@ -1,0 +1,827 @@
+ body{
+		background-color:#F7F7F7;
+	 }
+	 
+	 
+	 .navbar img{
+    height: 40px !important;
+    width: 110px !important;
+}
+
+
+
+
+	 
+	 .productsContainer{
+	     margin-top:50px;
+	 }
+
+     .brandNameWithTitle{
+         font-family: Calibri;
+         font-size: 32px;
+         color: darkslategrey;
+         margin-bottom: 25px;
+         margin-top: 100px;
+     }
+
+     /*Pagination*/
+     .paginationDiv{
+        margin-top: 30px;
+        width: 100%;
+
+    }
+    .pagination{
+        justify-content: center;
+    }
+    .paginationBtn{
+        font-family:"Comic Sans MS", cursive, sans-serif;
+        color: white;
+        font-weight: bold;
+        border-radius: 50% !important;
+        background-color: indigo;
+        border: 1px solid gainsboro;
+        outline: none;
+         height: 40px;
+        width: 40px;
+    }
+    .paginationBtn a{
+        color: white;
+        text-decoration: none;
+          line-height: 18px !important;
+        font-size: 18px !important;
+    }
+    .paginationBtn:hover{
+        border: 1px solid indigo;
+        opacity: 0.7;
+    }
+    .paginationBtn a:focus{
+        color: white;
+    }
+
+    .page-item{
+        outline: none;
+    }
+    .page-link{
+        color: darkslategrey;
+         background: none;
+        outline: none;
+        border: none;
+        font-family: Calibri;
+
+
+    }
+    .page-link:hover{
+        background: none;
+        outline: none;
+        border: none;
+        text-decoration: none;
+        color: indigo;
+
+
+    }
+    .page-link:focus{
+         background: none;
+        outline: none;
+        border: none;
+        box-shadow: none;
+    }
+
+
+      .mobileheaderContainer{
+            display: none;
+        }
+
+
+    .headerForm
+    {
+        width: 60%;
+        float: left;
+    }
+    .headerForm select{
+        height: 45px !important;
+        width: 25% !important;
+        border-right: none;
+        border-top-left-radius: 5px !important;
+        border-bottom-left-radius: 5px !important;
+        border-color: gainsboro;
+        color: indigo;
+        background-color: white;
+    }
+
+    .headerForm select:focus{
+        box-shadow: none;
+        outline: none;
+        border: 1px solid indigo;
+
+    }
+    .headerForm input{
+        height: 45px;
+    }
+    .headerForm input:focus{
+        box-shadow: none;
+        outline: none;
+        border: 1px solid indigo;
+        color: indigo;
+    }
+
+    .headerForm button{
+        height: 45px;
+        background-color: indigo;
+        color: white;
+        width: 70px;
+    }
+    .headerForm button:hover{
+        background-color: indigo;
+        opacity: 0.7;
+        box-shadow: none;
+        border-style: none;
+        outline: none;
+    }
+
+    .headerForm button:focus{
+        background-color: indigo;
+        opacity: 0.7;
+        box-shadow: none;
+        border-style: none;
+        outline: none;
+    }
+    .filterDiv{
+        background: none;
+        float: right;
+        text-align: right;
+        width: 75px;
+        height: 45px;
+        border: 1px solid gainsboro;
+        border-radius: 5px;
+        text-align: center;
+        cursor: pointer;
+        padding: 0px 5px 0px 5px;
+    }
+    .filterDiv:hover{
+        border: 1px solid indigo;
+    }
+    .filterDiv p{
+        font-size: 18px;
+        font-weight: bold;
+        font-family: Calibri;
+        color: #777777;
+        line-height: 45px;
+
+    }
+
+
+
+
+    /*Tags start*/
+     .tagsDiv h2{
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: #000;
+            font-weight: 500;
+            font-family: 'Poppins', sans-serif;
+        }
+        .tagsDiv h1{
+            margin-top: 10px;
+            margin-left: 10px;
+            font-size: 18px;
+            font-weight: 500;
+            padding: 5px 7px 5px 7px;
+            color: white;
+            background-color:#0d2e70;
+            display: inline-flex;
+            border-radius: 5px;
+            position: relative;
+            opacity: 0.9;
+
+        }
+
+        /*Tags end*/
+
+
+
+    .serviceLink{
+        text-decoration: none;
+    }
+
+    .bgDiv {
+         width: 75%;
+         height: 150px;
+        display: inline-block;
+        margin-bottom: 14px !important;
+        overflow: hidden;
+        background-color: white;
+        border-radius: 7px;
+        -webkit-box-shadow: 0px 0px 10px -5px rgba(0,0,0,0.66);
+        -moz-box-shadow: 0px 0px 10px -5px rgba(0,0,0,0.66);
+        box-shadow: 0px 0px 10px -5px rgba(0,0,0,0.66);
+
+    }
+    .bgDiv:hover{
+        transition: 0.3s;
+        border: none;
+        transform: translateY(-5px);
+        -webkit-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.66);
+        -moz-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.66);
+        box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.66);
+    }
+
+
+
+    /*################Service image start######################*/
+    .serviceImageDiv{
+        width: 190px;
+        float: left;
+        position: relative;
+    }
+
+    .discountSpan{
+        background-color: orangered;
+        color: white;
+        padding: 10px 5px 10px 5px;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        font-weight: bold;
+        font-size: 18px;
+        font-family: Calibri;
+    }
+
+    .serviceImage{
+        height: 150px;
+        width: 190px;
+
+    }
+    /*################Service image end######################*/
+
+
+
+
+
+
+
+
+
+
+    /*################Service title and badges div start######################*/
+  .titleAndBadgesDiv {
+        width: 55%;
+        float: left;
+        margin-left: 1%;
+    }
+    .titleAndBadgesDiv h4{
+        font-family: Calibri;
+        font-size: 24px;
+        margin-top: 2px;
+        color: darkslategrey;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2; /* number of lines to show */
+    }
+
+    .titleAndBadgesDiv h4:hover{
+        color: indigo;
+    }
+
+    .badge{
+        background: darkred;
+        padding: 5px 8px 5px 8px;
+        font-family: Calibri;
+        border-radius: 4px;
+        font-size: 12px;
+        color: white;
+        float: left;
+
+    }
+
+    .verifiedCoupon{
+       float: left;
+        margin-left: 10px;
+        font-family: Calibri;
+        color: green;
+        font-size: 17px;
+    }
+    /*################Service title and badges div end######################*/
+
+
+
+
+    /*################Service rating div start######################*/
+    .ratingDiv{
+        width: 19%;
+        float: left;
+    }
+    /*################Service rating div end######################*/
+
+
+    .listDisplayServices h5{
+        font-family: Calibri;
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .shortDescrip{
+        float: left;
+        margin-top: -15px !important;
+         display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;  /* Number of lines displayed before it truncate */
+         overflow: hidden;
+         color: #696969;
+
+    }
+
+    .ratingDiv{
+        text-align: right;
+    }
+    .realPrice{
+        margin-top: 14px;
+        font-family: Arial !important;
+        font-size: 22px !important;
+        font-weight: bold;
+        margin-right: 6px !important;
+        color: darkslategrey;
+
+
+    }
+
+    .secondPrice{
+        font-family: Arial !important;
+        font-size: 22px !important;
+        font-weight: bold;
+        margin-right: 6px !important;
+        text-decoration: line-through;
+        color: #777777;
+
+    }
+    .ratingDisplayDiv{
+        margin-right: 6px !important;
+    }
+    .ratingDisplayDiv span{
+        color: #777777;
+        font-size: 17px;
+        font-family: Calibri;
+    }
+    .ratingPng{
+        width: 85px;
+        height: 28px;
+    }
+    .ratingDisplayDiv p{
+        color: #777777!important;
+        font-size: 17px;
+        font-family: Calibri;
+    }
+
+
+
+
+
+    @media only screen and (max-width: 1200px) {
+        .bgDiv{
+         width: 100%;
+         height: 150px;
+         display: inline-block;
+
+    }
+        /*################Service image start######################*/
+    .serviceImageDiv{
+        width: 25%;
+        float: left;
+    }
+    .discountSpan{
+        background-color: orangered;
+        color: white;
+        padding: 8px 5px 8px 5px;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        font-weight: bold;
+        font-size: 16px;
+        font-family: Calibri;
+    }
+
+    .serviceImage{
+        height: 150px;
+        width: 100%;
+    }
+    .titleAndBadgesDiv h4{
+        line-height: 22px;
+    }
+
+
+    /*################Service image end######################*/
+
+    }
+    @media only screen and (max-width: 991px) {
+            /*################Service image start######################*/
+
+        /*################Service image start######################*/
+         .headerContainer h4 {
+             margin-bottom: 18px !important;
+             font-size: 22px;
+         }
+
+         .headerForm {
+             width: 70%;
+             float: left;
+         }
+
+         .filterDiv {
+             float: right;
+             text-align: right;
+             width: 75px;
+             height: 45px;
+             border: 1px solid gainsboro;
+             border-radius: 5px;
+             text-align: center;
+             cursor: pointer;
+         }
+
+         .filterDiv:hover {
+             border: 1px solid indigo;
+         }
+
+         .filterDiv p {
+             font-size: 17px;
+             font-weight: bold;
+             font-family: Calibri;
+         }
+
+
+    .bgDiv{
+         width: 100%;
+         height: 110px;
+         display: inline-block;
+
+    }
+    .serviceImageDiv{
+        width: 25%;
+        float: left;
+    }
+        .serviceImage{
+        height: 110px;
+        width: 100%;
+    }
+
+    .titleAndBadgesDiv{
+        width: 73%;
+        float: left;
+        margin-left: 2%;
+    }
+    .titleAndBadgesDiv h4{
+        margin-top: 2px;
+        font-size: 22px;
+        line-height: 22px;
+        }
+
+    .shortDescrip {
+        display: none;
+    }
+
+
+    .ratingDiv{
+        float: left;
+        margin-top: -24px!important;
+        width: 100%;
+        padding-left: 27%;
+    }
+
+    .realPrice{
+        margin-top: 0px!important;
+        font-family: Arial !important;
+        font-size: 19px !important;
+        font-weight: bold;
+        float: right;
+        margin-top: -2px!important;
+    }
+
+    .secondPrice{
+       display: none;
+    }
+
+    .ratingDisplayDiv{
+        float: left;
+        text-align: left;
+        margin-left: 6px;
+    }
+    .ratingDisplayDiv span{
+        color: #777777;
+        font-size: 17px;
+        font-family: Calibri;
+        float: left;
+        margin-left:5px;
+        margin-top: -4px!important;
+    }
+    .ratingPng{
+        width: 85px;
+        height: 27px;
+        float: left;
+        margin-top: -4px;
+    }
+    .ratingDisplayDiv p{
+        color: #777777!important;
+        font-size: 17px;
+        font-family: Calibri;
+        float: left;
+        margin-left: 3px;
+         margin-top: -4px!important;
+    }
+
+
+    }
+
+
+
+
+
+
+    /*#########################Start of tablets screens###########################*/
+    @media only screen and (max-width:768px) {
+
+        .titleAndBadgesDiv h4{
+            line-height: 22px;
+            font-size: 20px;
+        }
+
+
+        .ratingDisplayDiv p{
+            display: none;
+        }
+
+    }
+     /*#########################End of tablets screens###########################*/
+
+
+
+
+
+
+
+
+     /*#########################Start of mobile screens###########################*/
+    @media only screen and (max-width:480px) {
+        
+       .productsContainer{
+	        margin-top:0px;
+	    }
+
+
+        .brandNameWithTitle {
+         font-size: 24px;
+         color: darkslategrey;
+         margin-bottom: 25px;
+         margin-top: 80px;
+     }
+
+
+        .headerContainer {
+            display: none;
+        }
+
+        .mobileheaderContainer {
+            display: inline-block;
+        }
+
+        .mobibleSearchSpan {
+            margin-top: 5px;
+            margin-left: 5px;
+            color: grey;
+        }
+
+        .headerForm {
+            display: none;
+        }
+
+        .filterSpan {
+            font-weight: bold;
+            color: blue;
+            margin-bottom: 5px;
+
+        }
+
+
+        .mobileSelect {
+            height: 45px !important;
+            width: 100% !important;
+            border-right: none;
+            border-radius: 5px;
+            border: 1px solid gainsboro;
+            color: indigo;
+            margin-top: 10px;
+            background-color: white;
+
+        }
+
+        .mobileInput {
+            height: 45px;
+            margin-top: 10px;
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .mobileButton {
+            height: 45px;
+            width: 100%;
+            background-color: indigo;
+            color: white;
+            border-radius: 5px !important;
+            margin-top: 10px;
+        }
+
+
+        .mobileSelect:focus {
+            box-shadow: none;
+            outline: none;
+            border: 1px solid indigo;
+
+        }
+
+        .mobileInput:focus {
+            box-shadow: none;
+            outline: none;
+            border: 1px solid indigo;
+            color: indigo;
+        }
+
+        .mobileButton:hover {
+            background-color: indigo;
+            opacity: 0.7;
+            box-shadow: none;
+            border-style: none;
+            outline: none;
+        }
+
+        .mobileButton:focus {
+            background-color: indigo;
+            opacity: 0.7;
+            box-shadow: none;
+            border-style: none;
+            outline: none;
+        }
+
+
+        .mobileheaderContainer h4 {
+            margin-bottom: 12px !important;
+            font-size: 17px;
+            line-height: 19px;
+            color: #696969;
+        }
+
+
+        .tagsDiv h2{
+                font-size: 22px;
+                margin-bottom: 6px;
+                color: #000;
+                font-weight: 500;
+                font-family: 'Poppins', sans-serif;
+            }
+
+            .tagsDiv h1{
+                margin-top: 8px;
+                margin-left: 8px;
+                font-size: 16px;
+                font-weight: 400;
+                padding: 4px 6px 4px 6px;
+                color: white;
+                background-color:#0d2e70;
+                display: inline-flex;
+                border-radius: 4px;
+                position: relative;
+                opacity: 0.9;
+
+            }
+
+
+    .bgDiv {
+         width: 100%;
+         height: 80px;
+        display: inline-block;
+    }
+     .serviceImageDiv{
+        width: 27%;
+        float: left;
+    }
+     .discountSpan{
+        background-color: orangered;
+        color: white;
+        padding: 5px 2px 5px 2px;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        font-weight: bolder;
+        font-size: 12px;
+        font-family: Calibri;
+    }
+
+        .serviceImage{
+        height: 80px;
+        width: 100%;
+    }
+
+        .titleAndBadgesDiv {
+            width: 66%;
+            float: left;
+            margin-left: 2%;
+            position: relative;
+    }
+
+
+        .titleAndBadgesDiv h4 {
+            line-height: 15px;
+            font-size: 17px;
+            font-weight: 500;
+            position: relative;
+        }
+
+
+        .badgesDiv{
+            position: absolute;
+            top: 36px !important;
+        }
+     .badge {
+         background: darkred;
+         padding: 4px 6px 4px 6px;
+         font-family: Calibri;
+         border-radius: 4px;
+         font-size: 11px;
+         color: white;
+         float: left;
+        }
+
+        .verifiedCoupon{
+            display: none;
+        }
+        .ratingDiv {
+            padding-left: 29%;
+            position: relative;
+        }
+
+
+    .realPrice {
+        font-family: Calibri !important;
+        font-size: 17px !important;
+        font-weight: bold;
+        position: absolute;
+        right: 0%;
+        top: -20px;
+
+    }
+
+    .ratingDisplayDiv{
+        float: left;
+        margin-left: 0px;
+        margin-top: 3px!important;
+    }
+       .ratingDisplayDiv p{
+         color: #777777;
+        font-size: 15px;
+        font-family: Calibri;
+        margin-left: 3px;
+        margin-top: -4px!important;
+           display: block;
+    }
+    .ratingDisplayDiv span{
+        color: #777777;
+        font-size: 15px;
+        font-family: Calibri;
+        margin-left: 2px;
+        margin-top: -4px!important;
+    }
+    .ratingPng{
+        margin-top: -2px;
+        width: 70px;
+        height: 23px;
+        margin-left: 0px;
+    }
+
+    }
+
+    /* Extra small screens mobile*/
+    @media only screen and  (max-width:320px) {
+
+         .titleAndBadgesDiv h4 {
+            line-height: 15px;
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .ratingDisplayDiv p{
+         color: #777777;
+        font-size: 15px;
+        font-family: Calibri;
+        margin-left: 1px;
+        margin-top: -4px!important;
+    }
+    .ratingDisplayDiv span{
+        color: #777777;
+        font-size: 15px;
+        font-family: Calibri;
+        margin-left: 2px;
+        margin-top: -4px!important;
+    }
+
+
+
+    }

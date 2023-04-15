@@ -1,0 +1,341 @@
+{% extends 'public-section/all_brands_products_base.html' %}
+
+{% load static %}
+{% load filters %}
+{% block title %}Today Top Deal Online Shopping{% endblock %}
+
+{% block description %}Get the best deals for today's online shopping. Save huge on all big brands. Always visit UrgentCoupon.com for the best deals and offers.{% endblock %}
+{% block keywords %}today top deals,today top deal online shopping,top deals online,today top deals mixsaver{% endblock %}
+{% block author %}Mixsaver{% endblock %}
+{% block robots %}index, follow{% endblock %}
+
+{% block ogtitle %}Today Top Deals Online Shopping{% endblock %}
+{% block ogdescription %}Get best deals for today online shopping. Save huge on all big brands.{% endblock %}
+{% block ogurl %}{{ pageUrl }}{% endblock %}
+{% block ogimage %}https://mixsaver.com{% static 'public-section/imagesANDicons/mixsaver-logo-2.png' %}{% endblock %}
+
+{% block twittertitle %}Today Top Deals Online Shopping{% endblock %}
+{% block twitterdescription %}Get best deals for today online shopping. Save huge on all big brands.{% endblock %}
+
+{% block twitterimage %}https://mixsaver.com{% static 'public-section/imagesANDicons/mixsaver-logo-2.png' %}{% endblock %}
+
+
+{% block pageurl %}{{ pageUrl }}{% endblock %}
+
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="{% static 'public-section/styles/brand-all-products.css' %}"/>
+{% endblock %}
+
+
+{% block content %}
+
+        <div class="container">
+            <h1 class="brandNameWithTitle">Today top deals</h1>
+        </div>
+        <div class="container headerContainer">
+
+              <!--#########################header form and filter start############################-->
+            <form method="get" action="{% url 'TodayTopDealsSearch' %}" class="headerForm">
+            <div class="input-group mb-3 mobileFormDiv">
+                <select name="category" required>
+                <option value="all" selected>All</option>
+                 {% for category in Categories %}
+                     <option value="{{ category.CategoryName }}">{{ category.CategoryName }}</option>
+                 {% endfor %}
+                </select>
+              <input required name="q" type="text" class="form-control" placeholder="Search for coupon" aria-label="Text input with dropdown button">
+              <div class="input-group-append">
+                  <button class="btn btn-secondary" type="submit">
+                    <i class="fa fa-search"></i>
+                  </button>
+                </div>
+            </div>
+
+
+
+
+                <!-- Filter Modal -->
+        <div style="margin-top: 80px" class="modal fade" id="filterModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Filter</h5>
+                <button style="background: none; color: grey" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+
+                  <div class="form-check">
+                      <input style="width: 15px; height: 20px" type="checkbox" class="form-check-input" id="discount">
+                      <label style="height: 15px; margin-left: 5px;line-height: 15px; margin-top: 7px!important;" for="discount" class="form-check-label">Discount from 10% upto 95%</label>
+                  </div><br>
+
+
+                  <div class="form-check">
+                      <input name="price-low-to-high" style="width: 15px; height: 20px" type="checkbox" class="form-check-input" id="highToLow">
+                      <label style="height: 15px; margin-left: 5px;line-height: 15px; margin-top: 7px!important;" for="highToLow" class="form-check-label">Price from low to high</label>
+                  </div><br>
+
+                   <div class="form-check">
+                       <input name="active-deals" style="width: 15px; height: 20px" type="checkbox" class="form-check-input" id="activeDeal">
+                       <label style="height: 15px; margin-left: 5px;line-height: 15px; margin-top: 7px!important;" for="activeDeal" class="form-check-label">Active deals</label>
+                  </div>
+
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" style="border-style: none; border-radius: 5px" data-dismiss="modal">Apply</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+            </form>
+
+
+
+              <div class="filterDiv" data-toggle="modal" data-target="#filterModal">
+                  <p>Filter <i class="fa fa-filter"></i></p>
+              </div>
+
+             <!--#########################header form and filter end############################-->
+        </div>
+
+
+
+
+
+
+
+
+        <!--######### Mobile form section ###########-->
+
+
+              <!-- Filter Modal -->
+        <form method="get" action="{% url 'TodayTopDealsSearch' %}" class="mobileheaderForm">
+
+
+        <div style="margin-top: 80px" class="modal fade" id="mobileFormModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="mobiletitleexampleModalLabel">Search for product</h5>
+                <button style="background: none; color: grey" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+
+                <span data-toggle="modal" data-target="#mobilefilterModal" class="filterSpan">Filter</span><br>
+
+                <select class="mobileSelect" name="category">
+                    <option value="all" selected>All</option>
+                 {% for category in Categories %}
+                     <option value="{{ category.CategoryName }}">{{ category.CategoryName }}</option>
+                 {% endfor %}
+                </select>
+              <input required name="q" type="text" class="form-control mobileInput"  placeholder="Search for deal" aria-label="Text input with dropdown button">
+              <div class="input-group-append">
+                  <button class="btn btn-secondary mobileButton" type="submit">Search</button>
+              </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+                <!-- Filter Modal -->
+        <div style="margin-top: 80px" class="modal fade" id="mobilefilterModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="mobileexampleModalLabel">Filter</h5>
+                <button style="background: none; color: grey" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                  <div class="form-check">
+                      <input style="width: 15px; height: 20px" type="checkbox" class="form-check-input" id="mobileDiscount">
+                      <label style="height: 15px; margin-left: 5px;line-height: 15px; margin-top: 7px!important;" for="mobileDiscount" class="form-check-label">Discount from 10% upto 95%</label>
+                  </div><br>
+
+
+                  <div class="form-check">
+                      <input name="price-low-high" style="width: 15px; height: 20px" type="checkbox" class="form-check-input" id="mobilehighToLow">
+                      <label style="height: 15px; margin-left: 5px;line-height: 15px; margin-top: 7px!important;" for="highToLow" class="form-check-label">Price from high to low</label>
+                  </div><br>
+
+                   <div class="form-check">
+                       <input name="active-deals" style="width: 15px; height: 20px" type="checkbox" class="form-check-input" id="mobileactiveDeal">
+                       <label style="height: 15px; margin-left: 5px;line-height: 15px; margin-top: 7px!important;" for="activeDeal" class="form-check-label">Active deals</label>
+                  </div>
+
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="mobileButton" style="border-style: none; border-radius: 5px" data-dismiss="modal">Apply</button>
+              </div>
+            </div>
+          </div>
+        </div>
+            </form>
+
+
+
+
+
+
+        <div class="container mobileheaderContainer">
+            <span class="mobibleSearchSpan" data-toggle="modal" data-target="#mobileFormModal">
+                <i class="fa fa-search"></i>&nbsp;Search...</span><br><br>
+        </div>
+             <!--######################### Mobile form end ############################-->
+        <br>
+
+
+
+
+
+
+
+
+
+
+
+
+ <div class="container productsContainer">
+
+         {% for data in Data %}
+              <a href="{% url 'CouponDetailsViewStatic' data.CouponProductSlug %}" class="serviceLink">
+              <div class="bgDiv">
+                  <div class="serviceImageDiv" >
+                   <span class="discountSpan">{{ data.CouponProductPrice|discount:data.CouponProductDisplayPrice }}% OFF</span>
+
+                      <img class="serviceImage" src="{{ data.CouponProductImage.url }}" alt="Product image not found.">
+
+                  </div>
+                  <div class="titleAndBadgesDiv" >
+                      <h4>{{ data.CouponProductTitle|truncatechars:70 }}</h4>
+                      <div class="badgesDiv">
+                          {% if data.CouponProductTotalRating > 500 %}
+                              <div class="badge">BESTSELLER</div>
+                          {% endif %}
+                          <p class="verifiedCoupon"><i class="fa fa-check-circle"></i> Verified Coupon</p>
+                      </div>
+                      <p class="shortDescrip">
+                          {{ data.CouponProductDescription|truncatechars:100 }}
+                      </p>
+                  </div>
+                  <div class="ratingDiv" >
+                      <h5 class="realPrice">${{ data.CouponProductPrice }}</h5>
+                      <h5 class="secondPrice">${{ data.CouponProductDisplayPrice }}</h5>
+                      <div class="ratingDisplayDiv">
+                           {% if data.CouponProductRating >= 1.0 and data.CouponProductRating < 1.5 %}
+                         <img class="ratingPng" src="{% static 'public-section/imagesANDicons/ratings/1.PNG' %}" alt="Rating image not found.">
+                     {% elif data.CouponProductRating >= 1.5 and data.CouponProductRating < 2.0 %}
+                         <img class="ratingPng" src="{% static 'public-section/imagesANDicons/ratings/1-5.PNG' %}" alt="Rating image not found.">
+                     {% elif data.CouponProductRating >= 2.0 and data.CouponProductRating < 2.5 %}
+                         <img class="ratingPng" src="{% static 'public-section/imagesANDicons/ratings/2.PNG' %}" alt="Rating image not found.">
+                     {% elif data.CouponProductRating >= 2.5 and data.CouponProductRating < 3.0 %}
+                         <img class="ratingPng" src="{% static 'public-section/imagesANDicons/ratings/2-5.PNG' %}" alt="Rating image not found.">
+                     {% elif data.CouponProductRating >= 3.0 and data.CouponProductRating < 3.5 %}
+                         <img class="ratingPng" src="{% static 'public-section/imagesANDicons/ratings/3.PNG' %}" alt="Rating image not found.">
+                     {% elif data.CouponProductRating >= 3.5 and data.CouponProductRating < 4.0 %}
+                         <img class="ratingPng" src="{% static 'public-section/imagesANDicons/ratings/3-5.PNG' %}" alt="Rating image not found.">
+                     {% elif data.CouponProductRating >= 4.0 and data.CouponProductRating < 4.5 %}
+                         <img class="ratingPng" src="{% static 'public-section/imagesANDicons/ratings/4.PNG' %}" alt="Rating image not found.">
+                     {% elif data.CouponProductRating >= 4.5 and data.CouponProductRating < 4.5 %}
+                         <img class="ratingPng" src="{% static 'public-section/imagesANDicons/ratings/4-5.PNG' %}" alt="Rating image not found.">
+                     {% elif data.CouponProductRating >= 4.5 and data.CouponProductRating <= 5.0 %}
+                         <img class="ratingPng" src="{% static 'public-section/imagesANDicons/ratings/5.PNG' %}" alt="Rating image not found.">
+                     {% endif %}
+                       <span style="font-weight: bold;margin-top: 2px">{{ data.CouponProductRating }}</span>
+                          <p>({{ data.CouponProductTotalRating }}+ ratings)</p>
+                          </div>
+                          </div>
+                      </div>
+                </a>
+
+    {% endfor %}
+
+
+         </div> <!-- /container -->
+
+
+
+        <br><br>
+
+
+
+        <div class="container">
+                      <!--Pagination-->
+
+
+
+
+
+
+
+
+         </div> <!-- /container -->
+
+
+
+           <div class="paginationDiv">
+
+            <ul class="pagination">
+                {% if Data.has_previous %}
+                    <li class="page-item btn paginationBtn"><a  href="?page={{ Data.previous_page_number }}"><</a></li>
+                {% endif  %}
+
+                {% for num in Data.paginator.page_range %}
+
+                    {% if Data.number == num %}
+                        <li class="page-item"><a class="page-link" href="#" style="font-weight: bold;color: indigo">{{ num }}</a></li>
+
+                    {% elif num > Data.number|add:'-3' and num < Data.number|add:'3' %}
+                        <li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+                    {% endif %}
+                {% endfor %}
+
+                {% if Data.has_next %}
+                    <li class="page-item btn paginationBtn"><a  href="?page={{ Data.next_page_number }}">></a></li>
+                {% endif %}
+
+            </ul>
+
+            </div>
+
+
+
+
+            <br>
+
+        <div class="container tagsDiv">
+            <h2>Tags</h2>
+            <h1>today top deals</h1>
+            <h1>today top deal online shopping</h1>
+            <h1>amazon top deals</h1>
+            <h1>top deals online</h1>
+            <h1>today top deals mixsaver</h1>
+        </div>
+
+{% endblock %}
+
+
+
+
+

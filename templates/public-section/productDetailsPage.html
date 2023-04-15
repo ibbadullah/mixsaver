@@ -1,0 +1,1002 @@
+{% extends 'public-section/product_details_base.html' %}
+{% load filters %}
+{% load static %}
+{% block title %}{{ Data.CouponProductTitle|slice:60 }} {% endblock %}
+{% block description %}{{ Data.CouponProductDescription|truncatechars:160 }}{% endblock %}
+{% block keywords %}{{ HeaderKeywords }},{{ Data.CouponProductTitle }}{% endblock %}
+{% block author %}Mixsaver{% endblock %}
+{% block robots %}index, follow{% endblock %}
+
+{% block ogtitle %}{{ Data.CouponProductTitle|slice:70 }}{% endblock %}
+{% block ogdescription %}{{ Data.CouponProductDescription|truncatechars:160 }}{% endblock %}
+{% block ogurl %}{{ pageUrl }}{% endblock %}
+{% block ogimage %}https://mixsaver.com{{ Data.CouponProductImage.url }}{% endblock %}
+
+
+{% block twittertitle %}{{ Data.CouponProductTitle|slice:70 }}{% endblock %}
+{% block twitterdescription %}{{ Data.CouponProductDescription|truncatechars:160 }}{% endblock %}
+
+
+{% block twitterimage %}https://mixsaver.com{{ Data.CouponProductImage.url }}{% endblock %}
+
+
+{% block pageurl %}{{ pageUrl }}{% endblock %}
+
+   
+
+
+
+
+
+
+{% block stylesheet %}
+
+    <style>
+
+        .pd-wrap {
+            padding: 40px 0;
+            margin-top: 80px;
+            font-family: 'Poppins', sans-serif;
+            }
+        .detailsContainer{
+            background-color: white;
+            border: 1px solid gainsboro;
+            border-radius: 5px;
+            -webkit-box-shadow: 0px 0px 23px -3px rgba(0,0,0,0.26);
+            -moz-box-shadow: 0px 0px 23px -3px rgba(0,0,0,0.26);
+            box-shadow: 0px 0px 23px -3px rgba(0,0,0,0.26);
+        }
+        .heading-section {
+            margin-bottom: 20px;
+        }
+
+        .heading-section h2 {
+            font-size: 26px;
+            font-weight: 500;
+            padding-top: 25px;
+            padding-bottom: 15px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+
+        .owl-nav button {
+            position: absolute;
+            top: 50%;
+            transform: translate(0, -50%);
+            outline: none;
+            height: 25px;
+        }
+        .owl-nav button svg {
+            width: 25px;
+            height: 25px;
+        }
+        .owl-nav button.owl-prev {
+            left: 25px;
+        }
+        .owl-nav button.owl-next {
+            right: 25px;
+        }
+        .owl-nav button span {
+            font-size: 45px;
+        }
+        .product-thumb{
+            margin-top: 15px;
+        }
+        .product-thumb .item img {
+            height: 60px;
+        }
+        .product-name {
+            margin-bottom: 4px;
+        }
+         .product-name h3{
+            font-size: 22px;
+            font-weight: 500;
+            line-height: 22px;
+        }
+        .product-price-discount {
+            font-size: 22px;
+            font-weight: 400;
+            padding: 10px 0;
+            clear: both;
+        }
+        .product-price-discount span.line-through {
+            text-decoration: line-through;
+            margin-left: 10px;
+            font-size: 14px;
+            vertical-align: middle;
+            color: #a5a5a5;
+        }
+        .discountSpanDetails{
+            font-size: 15px;
+            font-weight: 400;
+            border-radius: 5px;
+            padding: 5px 7px 5px 7px;
+            color: white;
+            background-color: #db0d8c;
+            margin-left: 18px;
+
+        }
+
+        .product-info {
+            width: 100%;
+        }
+        .reviews-counter {
+            font-size: 13px;
+        }
+        .reviews-counter span {
+            vertical-align: -2px;
+        }
+        .rate {
+            float: left;
+            padding: 0 10px 0 0;
+        }
+        .rate img{
+            height: 30px;
+            width: 100px;
+        }
+
+        .product-dtl p {
+            font-size: 14px;
+            line-height: 24px;
+            color: #7a7a7a;
+        }
+
+        .product-dtl label {
+            line-height: 16px;
+            font-size: 15px;
+        }
+
+        .product-count {
+            margin-top: 15px;
+        }
+
+
+        .round-black-btn {
+            border-radius: 4px;
+            background: indigo;
+            color: #fff;
+            padding: 7px 45px;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .round-black-btn:hover,
+        .round-black-btn:focus {
+            color: white;
+            background-color: indigo;
+            text-decoration: none;
+            opacity: 0.7;
+        }
+
+        .product-info-tabs {
+            margin-top: 25px;
+        }
+        .product-info-tabs .nav-tabs {
+            border-bottom: 1px solid #d8d8d8;
+        }
+        .product-info-tabs .nav-tabs .nav-item {
+            margin-bottom: 0;
+        }
+        .product-info-tabs .nav-tabs .nav-link {
+            border: none;
+            border-bottom: 2px solid transparent;
+            color: #323232 !important;
+        }
+        .product-info-tabs .nav-tabs .nav-item .nav-link:hover {
+            border: none;
+        }
+        .product-info-tabs .nav-tabs .nav-item.show .nav-link,
+        .product-info-tabs .nav-tabs .nav-link.active,
+        .product-info-tabs .nav-tabs .nav-link.active:hover {
+            border: none;
+            border-bottom: 2px solid indigo !important;
+            font-weight: bold !important;
+            color: indigo !important;
+        }
+        .product-info-tabs .tab-content .tab-pane {
+            padding: 30px 20px;
+            font-size: 15px;
+            line-height: 24px;
+            color: #7a7a7a;
+            position: relative;
+        }
+
+        .ratingP {
+            margin-bottom: 20px;
+
+        }
+        .ratingP img{
+            height: 30px;
+            width: 100px;
+        }
+
+        .review-heading {
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 20px;
+            margin-bottom: 6px;
+            color: #000;
+        }
+
+        .totalRatings{
+            margin-top: 2px;
+            margin-left: 5px;
+            font-size: 13px;
+            color: #7a7a7a;
+            float: left;
+        }
+        .ratingDigits{
+            font-size: 16px;
+            font-weight: 600;
+            color: #7b7b7b;
+        }
+
+        .viewAllReviewsLink{
+            color: #3248b8;
+            font-weight: 600;font-size: 14px;
+            text-decoration: none;
+            margin-top: 5px;
+            text-align: left;
+            position: absolute;
+            left: 35px;
+        }
+
+
+
+
+        .recomendedProductsDiv h2{
+            font-size: 24px;
+            margin-bottom: 6px;
+            color: #000;
+            font-weight: 500;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .tagsDiv h2{
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: #000;
+            font-weight: 500;
+            font-family: 'Poppins', sans-serif;
+        }
+        .tagsDiv h1{
+            margin-top: 10px;
+            margin-left: 10px;
+            font-size: 18px;
+            font-weight: 400;
+            padding: 5px 7px 5px 7px;
+            color: white;
+            background-color:#0d2e70;
+            display: inline-flex;
+            border-radius: 5px;
+            position: relative;
+            opacity: 0.9;
+
+        }
+
+
+
+
+        /*Model popup start*/
+
+
+        .modal-body input:focus{
+            outline: none !important;
+            border: 1px solid green;
+            color: green;
+            outline-style: none !important;
+            box-shadow: none;
+        }
+
+     .modal-body .span{
+
+            color: green;
+            font-size: 16px;
+            font-family: Calibri;
+            margin-top: 0px;
+            margin-left: 5px;
+            float: left;
+
+        }
+
+        .modal-title{
+            font-family: Calibri;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        #messageIconDetails{
+            display: none;
+            color: green;
+            font-size: 16px;
+            margin-top: 5px;
+            float: left;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /* Recomended Products start*/
+        /* Cards horizontal start */
+
+      * { box-sizing: border-box; }
+
+
+        .carousel {
+
+         }
+
+
+    .deals-title {
+        font-family: Calibri;
+        font-size: 28px;
+        float: left;
+        margin-left: 30px;
+        color: #434f46;
+    }
+
+    /*Custom cards styling end*/
+
+    .carousel-cell{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-right: 10px;
+        width: 200px;
+        height: 290px;
+        border-radius: 8px;
+        background-color: white;
+        overflow: hidden;
+        position: relative;
+        -webkit-box-shadow: 0px 0px 10px -5px rgba(0,0,0,0.66);
+        -moz-box-shadow: 0px 0px 10px -5px rgba(0,0,0,0.66);
+        box-shadow: 0px 0px 10px -5px rgba(0,0,0,0.66);
+
+    }
+    .carousel-cell:hover{
+        transition: 0.5s;
+        -webkit-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.66);
+        -moz-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.66);
+        box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.66);
+    }
+
+     .productImgDiv{
+         width: 200px;
+         height: 180px;
+         border-bottom: 1px dashed grey;
+         position: absolute;
+     }
+     .productImgDiv img{
+         width: 200px;
+         height: 170px;
+         margin-top: 0px;
+     }
+     .badge{
+         background-color: orangered;
+         color: white;
+         width: 130px;
+         height: 30px;
+         text-align: center;
+         font-family: Calibri;
+         font-size: 15px;
+         line-height: 20px;
+         position: absolute;
+         top: 15px;
+         left: -35px;
+         float: left;
+         transform: rotate(-45deg);
+     }
+     .titleAndCateg {
+         width: 200px;
+         height: 36px;
+         position: absolute;
+         margin-top: 187px;
+     }
+     .titleAndCateg a{
+         text-decoration: none;
+     }
+
+     .titleAndCateg h4 {
+         font-size: 17px;
+         margin-left: 10px;
+         margin-right: 10px;
+         margin-bottom: 0px;
+         line-height: 17px;
+         color: darkslategrey;
+         font-family: Calibri;
+         font-weight: bold;
+         overflow: hidden;
+     }
+
+     .titleAndCateg h4:hover{
+         color: indigo;
+     }
+     .categeory {
+         font-family: Calibri;
+         font-size: 16px;
+         color: green;
+         margin-top: 3px;
+         text-align: center;
+         margin-bottom: 0px;
+     }
+
+     .ratingDiv{
+         margin-top: 228px;
+         width: 200px;
+         float: left;
+         position: absolute;
+         height: 30px;
+     }
+
+      .ratingP {
+         margin-left: 10px;
+         font-size: 17px;
+         font-weight: bold;
+         color: #434f46;
+         float: left;
+          line-height: 30px;
+     }
+
+     .ratingImage{
+         width: 90px;
+         height: 30px;
+         float: left;
+         margin-left: 3px;
+         margin-top: 0px;
+     }
+
+     .totalRatings {
+         float: left;
+         margin-left: 3px;
+         height: 30px;
+         line-height: 30px;
+         font-family: Calibri;
+         color: grey;
+         font-size: 14px;
+     }
+
+
+
+
+    .pricingDiv{
+        width: 200px;
+        height: 22px;
+        margin-top: 233px;
+        position: absolute;
+    }
+    .pricingDiv .realPrice{
+        text-align: right;
+        float: right;
+        margin-right: 10px;
+        font-size: 22px;
+        color: #434f46;
+        line-height: 22px;
+        font-family: Calibri;
+        font-weight: bold;
+
+
+    }
+     .pricingDiv .displayPrice{
+         text-align: left;
+         float: left;
+         margin-left: 10px;
+         font-size: 18px;
+         font-family: Calibri;
+         text-decoration: line-through;
+         color: grey;
+         line-height: 22px;
+     }
+     .discountSpan {
+         background-color: #265182;
+         color: white;
+         width: 45px;
+         height: 22px;
+         text-align: center;
+         border-radius: 3px;
+         font-family: Calibri;
+         font-size: 17px;
+         float: left;
+         margin-left: 8px;
+         line-height: 22px;
+     }
+
+     .back-cover{
+         position: absolute;
+         background-color: orange;
+         opacity: 0.9;
+         width: 200px;
+         height: 290px;
+         z-index: 1;
+         top: 0;
+         left: 0;
+         display: none;
+     }
+
+     .carousel-cell:hover .back-cover{
+         display: block;
+         transition: 0.6s;
+         text-align: center;
+     }
+
+     .back-cover-body{
+         margin-top: 101px;
+         width: 200px;
+         height: 88px;
+     }
+
+     .couponBtn{
+         background-color: indigo;
+         color: white;
+         width: 130px;
+     }
+
+     .couponBtn:hover{
+         color: white;
+         background-color: #09084a;
+
+     }
+     .detailsBtn{
+         width: 130px;
+         background-color: #b007a8;
+         color: white;
+     }
+     .detailsBtn:hover{
+         background-color: #850382;
+         color: white;
+     }
+     /*Custom cards styling end*/
+
+
+
+
+
+
+        .carousel-cell.is-selected {
+            border: none;
+        }
+
+        /* cell number */
+        .carousel-cell:before {
+          display: block;
+        }
+
+        .flickity-page-dots{
+            display: none;
+        }
+
+                /* big previous & next buttons */
+        .flickity-prev-next-button {
+            background-color: indigo !important;
+        }
+        /* icon color */
+        .flickity-button-icon {
+            fill: white !important;
+        }
+        /* hide disabled button */
+        .flickity-button:disabled {
+            display: none;
+        }
+        .flickity-button:hover{
+            background-color: #232466;
+
+        }
+        .flickity-prev-next-button:hover{
+            background-color: #232466;
+        }
+
+
+        .exploreMore{
+            background-color: #232466;
+            padding: 0px 8px 0px 8px;
+            text-align: center;
+        }
+        .exploreMore a{
+            font-family: Calibri;
+            font-size: 26px;
+            line-height: 290px;
+            text-decoration: none;
+            font-weight: bold;
+            color: white;
+            border-radius: 0px !important;
+        }
+
+        .exploreMore a:hover{
+            color: #ded7de;
+        }
+
+
+
+
+
+        /*Model for getting coupon code and opening link*/
+        .modal-body .span{
+            color: green;
+            font-size: 16px;
+            font-family: Calibri;
+            margin-top: 5px;
+            margin-left: 5px;
+        }
+
+        .modal-title{
+            font-family: Calibri;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+
+        /* Recomended Products end*/
+
+
+
+
+
+
+
+
+
+
+
+       /*Tablet screens and mobile*/
+        @media only screen and (max-width: 768px) {
+
+
+
+            .detailsContainer{
+                background-color: white;
+                border-style: none;
+                border-radius: 0px;
+                box-shadow: none;
+            }
+
+            .product-thumb {
+                display: none !important;
+            }
+
+            .heading-section {
+                margin-bottom: 10px;
+            }
+
+            .heading-section h2 {
+                font-size: 22px;
+                font-weight: 500;
+                padding-top: 8px;
+                padding-bottom: 10px;
+                font-family: 'Poppins', sans-serif;
+            }
+
+            .product-name {
+                margin-top: 15px;
+                margin-bottom: 4px;
+            }
+
+            .product-name h3{
+                font-size: 20px;
+                font-weight: 500;
+                line-height: 20px;
+            }
+
+            .discountSpanDetails{
+                float: right;
+            }
+
+            .round-black-btn {
+                border-radius: 4px;
+                background: indigo;
+                color: #fff;
+                padding: 7px 45px;
+                display: inline-block;
+                margin-top: 20px;
+                width: 100%;
+                text-align: center;
+            }
+
+            .product-info-tabs {
+                margin-top: 45px;
+              }
+
+            .recomendedProductsDiv h2{
+                font-size: 22px;
+                margin-bottom: 6px;
+                color: #000;
+                font-weight: 500;
+                font-family: 'Poppins', sans-serif;
+        }
+
+            .tagsDiv h2{
+                font-size: 22px;
+                font-weight: 600;
+                margin-bottom: 6px;
+                color: #000;
+                font-weight: 500;
+                font-family: 'Poppins', sans-serif;
+            }
+
+            .tagsDiv h1{
+                margin-top: 8px;
+                margin-left: 8px;
+                font-size: 16px;
+                font-weight: 400;
+                padding: 4px 6px 4px 6px;
+                color: white;
+                background-color:#0d2e70;
+                display: inline-flex;
+                border-radius: 4px;
+                position: relative;
+                opacity: 0.9;
+
+            }
+        }
+
+
+
+
+        @media only screen and (max-width: 480px) {
+            body{
+                background-color: white;
+            }
+            .pd-wrap {
+                padding: 10px 0;
+                margin-top: 60px;
+                font-family: 'Poppins', sans-serif;
+            }
+
+
+        }
+    </style>
+
+{% endblock %}
+
+
+
+
+{% block content %}
+
+
+    <div class="pd-wrap">
+        <div class="container detailsContainer">
+	        <div class="heading-section">
+	            <h2>Product Details</h2>
+	        </div>
+            <input type="text" id="couponLinkDeatils" hidden value="{{ Data.CouponLink }}"/>
+	        <div class="row">
+	        	<div class="col-md-4">
+	        		<div id="slider" class="owl-carousel product-slider">
+						<div class="item">
+						  	<img src="{{ Data.CouponProductImage.url }}" alt="Product image not found." />
+						</div>
+					</div>
+					<div id="thumb" class="owl-carousel product-thumb">
+						<div class="item">
+						  	<img src="{{ Data.CouponProductImage.url }}" alt="Thumbnail image not found."/>
+						</div>
+					</div>
+	        	</div>
+                <div class="col-md-1">
+
+                </div>
+	        	<div class="col-md-6">
+	        		<div class="product-dtl">
+        				<div class="product-info">
+                            <div class="product-name"><h3>{{ Data.CouponProductTitle }} {{ Data.Brand }} {{ date|CurrentMonthYear }}</h3></div>
+		        			<div class="reviews-counter">
+								<div class="rate">
+                                     {% if Data.CouponProductRating >= 1.0 and Data.CouponProductRating < 1.5 %}
+                                        <img src="{% static 'public-section/imagesANDicons/ratings/1.PNG' %}" alt="Rating image not found.">
+                                     {% elif Data.CouponProductRating >= 1.5 and Data.CouponProductRating < 2.0 %}
+                                         <img  src="{% static 'public-section/imagesANDicons/ratings/1-5.PNG' %}" alt="Rating image not found.">
+                                     {% elif Data.CouponProductRating >= 2.0 and Data.CouponProductRating < 2.5 %}
+                                         <img src="{% static 'public-section/imagesANDicons/ratings/2.PNG' %}" alt="Rating image not found.">
+                                     {% elif Data.CouponProductRating >= 2.5 and Data.CouponProductRating < 3.0 %}
+                                         <img  src="{% static 'public-section/imagesANDicons/ratings/2-5.PNG' %}" alt="Rating image not found.">
+                                     {% elif Data.CouponProductRating >= 3.0 and Data.CouponProductRating < 3.5 %}
+                                         <img  src="{% static 'public-section/imagesANDicons/ratings/3.PNG' %}" alt="Rating image not found.">
+                                     {% elif Data.CouponProductRating >= 3.5 and Data.CouponProductRating < 4.0 %}
+                                         <img  src="{% static 'public-section/imagesANDicons/ratings/3-5.PNG' %}" alt="Rating image not found.">
+                                     {% elif Data.CouponProductRating >= 4.0 and Data.CouponProductRating < 4.5 %}
+                                         <img  src="{% static 'public-section/imagesANDicons/ratings/4.PNG' %}" alt="Rating image not found.">
+                                     {% elif Data.CouponProductRating >= 4.5 and Data.CouponProductRating < 4.5 %}
+                                         <img  src="{% static 'public-section/imagesANDicons/ratings/4-5.PNG' %}" alt="Rating image not found.">
+                                     {% elif Data.CouponProductRating >= 4.5 and Data.CouponProductRating <= 5.0 %}
+                                         <img  src="{% static 'public-section/imagesANDicons/ratings/5.PNG' %}" alt="Rating image not found.">
+                                     {% endif %}
+
+                                    <span>{{ Data.CouponProductTotalRating }}+ Reviews</span>
+								  </div>
+							</div>
+		        			<div class="product-price-discount"><span>${{ Data.CouponProductPrice }}</span><span class="line-through">${{ Data.CouponProductDisplayPrice }}</span> <span class="discountSpanDetails">{{ Data.CouponProductPrice|discount:Data.CouponProductDisplayPrice }}% OFF</span></div>
+		        		</div>
+	        			<p>{{ Data.CouponProductDescription|truncatechars:120 }}</p>
+
+
+	        			<div class="product-count">
+
+							<a href="#" class="round-black-btn" href="#" onclick="openCouponLinkDetails()" style="color: white !important;" id="getCouponBtnDetails" data-toggle="modal" data-target="#modalCouponDetails">Get Coupon</a>
+	        			</div>
+	        		</div>
+	        	</div>
+	        </div>
+
+
+
+
+              <!--****************-->
+        <!--    Model     -->
+        <!--****************-->
+
+<div style="margin-top: 90px" class="modal fade" id="modalCouponDetails" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Copy coupon code</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+         <input id="couponDetials" type="text" value="{{ Data.CouponCode }}" readonly class="form-control"/>
+        <span class="span" style="margin-top: 0px;" id="copyMessageDeatils"></span>
+      </div>
+      <div class="modal-footer" style="border: none">
+        <button type="button" id="copyBtnDeatils" class="btn btn-primary" onclick="copyCouponFunctionDetails()">Copy code</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+	        <div class="product-info-tabs">
+		        <ul class="nav nav-tabs" id="myTab" role="tablist">
+				  	<li class="nav-item">
+				    	<a class="nav-link active" id="description-tab" data-toggle="tab" href="#description" role="tab" aria-controls="description" aria-selected="true">Description</a>
+				  	</li>
+				  	<li class="nav-item">
+				    	<a class="nav-link" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review" aria-selected="false">Reviews</a>
+				  	</li>
+				</ul>
+				<div class="tab-content" id="myTabContent">
+				  	<div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
+				  		{{ Data.CouponProductDescription }}
+				  	</div>
+				  	<div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
+				  		<div class="review-heading">Reviews</div>
+				  		<p class="ratingP">
+
+                                     {% if Data.CouponProductRating >= 1.0 and Data.CouponProductRating < 1.5 %}
+                                        <img src="{% static 'public-section/imagesANDicons/ratings/1.PNG' %}" alt="Rating image not found.">
+                                     {% elif Data.CouponProductRating >= 1.5 and Data.CouponProductRating < 2.0 %}
+                                         <img  src="{% static 'public-section/imagesANDicons/ratings/1-5.PNG' %}" alt="Rating image not found.">
+                                     {% elif Data.CouponProductRating >= 2.0 and Data.CouponProductRating < 2.5 %}
+                                         <img src="{% static 'public-section/imagesANDicons/ratings/2.PNG' %}" alt="Rating image not found.">
+                                     {% elif Data.CouponProductRating >= 2.5 and Data.CouponProductRating < 3.0 %}
+                                         <img  src="{% static 'public-section/imagesANDicons/ratings/2-5.PNG' %}" alt="Rating image not found.">
+                                     {% elif Data.CouponProductRating >= 3.0 and Data.CouponProductRating < 3.5 %}
+                                         <img  src="{% static 'public-section/imagesANDicons/ratings/3.PNG' %}" alt="Rating image not found.">
+                                     {% elif Data.CouponProductRating >= 3.5 and Data.CouponProductRating < 4.0 %}
+                                         <img  src="{% static 'public-section/imagesANDicons/ratings/3-5.PNG' %}" alt="Rating image not found.">
+                                     {% elif Data.CouponProductRating >= 4.0 and Data.CouponProductRating < 4.5 %}
+                                         <img  src="{% static 'public-section/imagesANDicons/ratings/4.PNG' %}" alt="Rating image not found.">
+                                     {% elif Data.CouponProductRating >= 4.5 and Data.CouponProductRating < 4.5 %}
+                                         <img  src="{% static 'public-section/imagesANDicons/ratings/4-5.PNG' %}" alt="Rating image not found.">
+                                     {% elif Data.CouponProductRating >= 4.5 and Data.CouponProductRating <= 5.0 %}
+                                         <img  src="{% static 'public-section/imagesANDicons/ratings/5.PNG' %}" alt="Rating image not found.">
+                                     {% endif %}
+
+                            <p class="totalRatings"><span class="ratingDigits">{{ Data.CouponProductRating }}</span> ({{ Data.CouponProductTotalRating }}+ reviews)</p>
+                        </p>
+                        <br>
+                            <a href="{{ Data.CouponLink }}" class="viewAllReviewsLink" style="text-decoration: none">View all reviews</a>
+				  	</div>
+				</div>
+			</div>
+            <hr>
+
+
+
+
+
+
+
+
+            <div class="container recomendedProductsDiv">
+
+                <h2>Related Products</h2>
+
+                <div class="container">
+                        <div class="carousel" data-flickity='{ "groupCells": true }'>
+
+                            {% for data in RelatedProducts %}
+
+                                <div class="carousel-cell">
+                       <div class="productImgDiv">
+                           {% if data.CouponProductTotalRating > 300 %}
+                                <span class="badge">Best Seller</span>
+                           {% endif %}
+                           <img src="{{ data.CouponProductImage.url }}" alt="Product image not found.">
+                       </div>
+
+                       <div class="titleAndCateg">
+                           <a href="#"><h4>{{ data.CouponProductTitle|truncatechars:15 }}</h4></a>
+                           <p class="categeory"><i class="fa fa-check-circle"></i>&nbsp;Coupon verified</p>
+                       </div>
+
+                       <div class="ratingDiv">
+                           <p class="ratingP">{{ data.CouponProductRating }}</p>
+                           {% if data.CouponProductRating >= 1.0 and data.CouponProductRating < 1.5 %}
+                                <img class="ratingImage" src="{% static 'public-section/imagesANDicons/ratings/1.PNG' %}" alt="Rating image not found.">
+                           {% elif data.CouponProductRating >= 1.5 and data.CouponProductRating < 2.0 %}
+                                <img class="ratingImage" src="{% static 'public-section/imagesANDicons/ratings/1-5.PNG' %}" alt="Rating image not found.">
+                           {% elif data.CouponProductRating >= 2.0 and data.CouponProductRating < 2.5 %}
+                                <img class="ratingImage" src="{% static 'public-section/imagesANDicons/ratings/2.PNG' %}" alt="Rating image not found.">
+                           {% elif data.CouponProductRating >= 2.5 and data.CouponProductRating < 3.0 %}
+                                <img class="ratingImage" src="{% static 'public-section/imagesANDicons/ratings/2-5.PNG' %}" alt="Rating image not found.">
+                           {% elif data.CouponProductRating >= 3.0 and data.CouponProductRating < 3.5 %}
+                                <img class="ratingImage" src="{% static 'public-section/imagesANDicons/ratings/3.PNG' %}" alt="Rating image not found.">
+                           {% elif data.CouponProductRating >= 3.5 and data.CouponProductRating < 4.0 %}
+                                <img class="ratingImage" src="{% static 'public-section/imagesANDicons/ratings/3-5.PNG' %}" alt="Rating image not found.">
+                           {% elif data.CouponProductRating >= 4.0 and data.CouponProductRating < 4.5 %}
+                                <img class="ratingImage" src="{% static 'public-section/imagesANDicons/ratings/4.PNG' %}" alt="Rating image not found.">
+                           {% elif data.CouponProductRating >= 4.5 and data.CouponProductRating < 4.5 %}
+                                <img class="ratingImage" src="{% static 'public-section/imagesANDicons/ratings/4-5.PNG' %}" alt="Rating image not found.">
+                           {% elif data.CouponProductRating >= 4.5 and data.CouponProductRating <= 5.0 %}
+                                <img class="ratingImage" src="{% static 'public-section/imagesANDicons/ratings/5.PNG' %}" alt="Rating image not found.">
+                           {% endif %}
+
+                           <span class="totalRatings">({{ data.CouponProductTotalRating }}+)</span>
+                            </div>
+                         <br>
+                          <div class="pricingDiv">
+                              <h4 class="displayPrice">${{ data.CouponProductDisplayPrice }}</h4>
+                              <span class="discountSpan">{{ data.CouponProductPrice|discount:data.CouponProductDisplayPrice }}%</span>
+                              <h4 class="realPrice">${{ data.CouponProductPrice }}</h4>
+
+                          </div>
+
+                           <div class="back-cover">
+                               <div class="back-cover-body">
+                                   <a href="{{ data.CouponLink }}" class="btn couponBtn" target="_blank">Get Deal</a><br><br>
+                                   <a class="btn detailsBtn" href="{% url 'CouponDetailsViewStatic' data.CouponProductSlug %}">View details</a>
+                               </div>
+
+                           </div>
+                         </div>
+
+                            {% endfor %}
+
+
+        <!-- Last card -->
+        <div class="carousel-cell exploreMore">
+            <a href="{% url "Home" %}">Explore more</a>
+            </div>
+            </div>
+                </div>
+
+
+            </div>
+            <hr>
+
+
+
+
+
+            <div class="container tagsDiv">
+                <h2>Tags</h2>
+                {% for bottom in BottomKeywords %}
+                    <h1>{{ bottom }}</h1>
+                {% endfor %}
+                <h1>{{ Data.CouponProductTitle }}</h1>
+            </div>
+
+		</div>
+	</div>
+
+
+
+{% endblock %}

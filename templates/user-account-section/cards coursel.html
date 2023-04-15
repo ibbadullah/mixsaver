@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cards</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../../static/public-section/other_libaries/coursel/coursel.css">
+    <style>
+
+
+        body { font-family: sans-serif;background-color:#F7F7F7; }
+
+         /* external css: flickity.css */
+
+      * { box-sizing: border-box; }
+
+
+        .carousel {
+            /*Couresel back*/
+         }
+
+
+    .deals-title {
+        font-family: Calibri;
+        font-size: 28px;
+        float: left;
+        margin-left: 30px;
+        color: #434f46;
+    }
+
+    /*Custom cards styling end*/
+
+    .carousel-cell{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-right: 10px;
+        width: 200px;
+        height: 290px;
+        border-radius: 8px;
+        background-color: white;
+        overflow: hidden;
+        position: relative;
+        -webkit-box-shadow: 0px 0px 10px -5px rgba(0,0,0,0.66);
+        -moz-box-shadow: 0px 0px 10px -5px rgba(0,0,0,0.66);
+        box-shadow: 0px 0px 10px -5px rgba(0,0,0,0.66);
+
+    }
+    .carousel-cell:hover{
+        transition: 0.5s;
+        -webkit-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.66);
+        -moz-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.66);
+        box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.66);
+    }
+
+     .productImgDiv{
+         width: 200px;
+         height: 180px;
+         border-bottom: 1px dashed grey;
+         position: absolute;
+     }
+     .productImgDiv img{
+         width: 200px;
+         height: 170px;
+         margin-top: 0px;
+     }
+     .badge{
+         background-color: orangered;
+         color: white;
+         width: 130px;
+         height: 30px;
+         text-align: center;
+         font-family: Calibri;
+         font-size: 15px;
+         line-height: 20px;
+         position: absolute;
+         top: 15px;
+         left: -35px;
+         float: left;
+         transform: rotate(-45deg);
+     }
+     .titleAndCateg {
+         width: 200px;
+         height: 36px;
+         position: absolute;
+         margin-top: 187px;
+     }
+     .titleAndCateg a{
+         text-decoration: none;
+     }
+
+     .titleAndCateg h4 {
+         font-size: 17px;
+         margin-left: 10px;
+         margin-right: 10px;
+         margin-bottom: 0px;
+         line-height: 17px;
+         color: darkslategrey;
+         font-family: Calibri;
+         font-weight: bold;
+         overflow: hidden;
+     }
+
+     .titleAndCateg h4:hover{
+         color: indigo;
+     }
+     .categeory {
+         font-family: Calibri;
+         font-size: 16px;
+         color: green;
+         margin-top: 3px;
+         text-align: center;
+         margin-bottom: 0px;
+     }
+
+     .ratingDiv{
+         margin-top: 228px;
+         width: 200px;
+         float: left;
+         position: absolute;
+         height: 30px;
+     }
+
+      .ratingP {
+         margin-left: 10px;
+         font-size: 17px;
+         font-weight: bold;
+         color: #434f46;
+         float: left;
+          line-height: 30px;
+     }
+
+     .ratingImage{
+         width: 90px;
+         height: 30px;
+         float: left;
+         margin-left: 3px;
+         margin-top: 0px;
+     }
+
+     .totalRatings {
+         float: left;
+         margin-left: 3px;
+         height: 30px;
+         line-height: 30px;
+         font-family: Calibri;
+         color: grey;
+         font-size: 14px;
+     }
+
+
+
+
+    .pricingDiv{
+        width: 200px;
+        height: 22px;
+        margin-top: 233px;
+        position: absolute;
+    }
+    .pricingDiv .realPrice{
+        text-align: right;
+        float: right;
+        margin-right: 10px;
+        font-size: 22px;
+        color: #434f46;
+        line-height: 22px;
+        font-family: Calibri;
+        font-weight: bold;
+
+
+    }
+     .pricingDiv .displayPrice{
+         text-align: left;
+         float: left;
+         margin-left: 10px;
+         font-size: 18px;
+         font-family: Calibri;
+         text-decoration: line-through;
+         color: grey;
+         line-height: 22px;
+     }
+     .discountSpan {
+         background-color: #265182;
+         color: white;
+         width: 45px;
+         height: 22px;
+         text-align: center;
+         border-radius: 3px;
+         font-family: Calibri;
+         font-size: 17px;
+         float: left;
+         margin-left: 8px;
+         line-height: 22px;
+     }
+
+     .back-cover{
+         position: absolute;
+         background-color: orange;
+         opacity: 0.9;
+         width: 200px;
+         height: 290px;
+         z-index: 1;
+         top: 0;
+         left: 0;
+         display: none;
+     }
+
+     .carousel-cell:hover .back-cover{
+         display: block;
+         transition: 0.6s;
+         text-align: center;
+     }
+
+     .back-cover-body{
+         margin-top: 101px;
+         width: 200px;
+         height: 88px;
+     }
+
+     .couponBtn{
+         background-color: indigo;
+         color: white;
+         width: 130px;
+     }
+
+     .couponBtn:hover{
+         color: white;
+         background-color: #09084a;
+
+     }
+     .detailsBtn{
+         width: 130px;
+         background-color: #b007a8;
+         color: white;
+     }
+     .detailsBtn:hover{
+         background-color: #850382;
+         color: white;
+     }
+     /*Custom cards styling end*/
+
+
+
+
+
+
+        .carousel-cell.is-selected {
+            border: 1px solid indigo;
+        }
+
+        /* cell number */
+        .carousel-cell:before {
+          display: block;
+        }
+
+        .flickity-page-dots{
+            display: none;
+        }
+
+                /* big previous & next buttons */
+        .flickity-prev-next-button {
+            background-color: indigo;
+        }
+        /* icon color */
+        .flickity-button-icon {
+            fill: white;
+        }
+        /* hide disabled button */
+        .flickity-button:disabled {
+            display: none;
+        }
+        .flickity-button:hover{
+            background-color: #232466;
+
+        }
+        .flickity-prev-next-button:hover{
+            background-color: #232466;
+        }
+
+
+        .exploreMore{
+            background-color: #232466;
+            padding: 0px 8px 0px 8px;
+            text-align: center;
+        }
+        .exploreMore a{
+            font-family: Calibri;
+            font-size: 26px;
+            line-height: 290px;
+            text-decoration: none;
+            font-weight: bold;
+            color: white;
+            border-radius: 0px !important;
+        }
+
+        .exploreMore a:hover{
+            color: #ded7de;
+        }
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+
+
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="container">
+            <h1 class="deals-title">Today Top deals</h1>
+        </div>
+    </div>
+
+
+    <div class="carousel" data-flickity='{ "groupCells": true }'>
+
+     <div class="carousel-cell">
+         <div class="productImgDiv">
+            <span class="badge">Best Seller</span>
+             <img src="../../static/public-section/imagesANDicons/mobileadd.png" alt="Product image not found.">
+         </div>
+
+         <div class="titleAndCateg">
+             <a href="#"><h4>Best and cheap hotel in..</h4></a>
+             <p class="categeory"><i class="fa fa-check-circle"></i>&nbsp;Coupon verified</p>
+         </div>
+
+         <div class="ratingDiv">
+             <p class="ratingP">4.5</p>
+             <img class="ratingImage" src="../../static/public-section/imagesANDicons/ratings/4-5.PNG" alt="Rating image not found.">
+             <span class="totalRatings">(345)</span>
+         </div>
+       <br>
+        <div class="pricingDiv">
+            <h4 class="displayPrice">$655</h4>
+            <span class="discountSpan">50%</span>
+            <h4 class="realPrice">$344</h4>
+
+        </div>
+
+         <div class="back-cover">
+             <div class="back-cover-body">
+                 <a href="https://www.youtube.com/" class="btn couponBtn" target="_blank">Get Deal</a><br><br>
+                 <a class="btn detailsBtn" href="#">View details</a>
+             </div>
+
+         </div>
+     </div>
+
+
+
+
+
+
+
+
+
+        <div class="carousel-cell exploreMore">
+            <a href="https://www.facebook.com/" target="_self">Explore more</a>
+        </div>
+    </div>
+</div>
+
+
+
+
+  <!--****************-->
+        <!--    Model     -->
+        <!--****************-->
+
+
+
+
+
+
+
+
+<script src="../../static/public-section/other_libaries/coursel/coursel.java"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
+

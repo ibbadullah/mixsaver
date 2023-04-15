@@ -1,0 +1,226 @@
+html{
+    scroll-behavior: smooth;
+}
+body {
+    width: 100%;
+    background-color:#F7F7F7;
+}
+
+
+body::-webkit-scrollbar {
+    width: 1em;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: floralwhite;
+    border-radius: 8px;
+
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: indigo;
+    border-radius: 8px;
+}
+
+/*Styles for navbar*/
+
+
+.navbar img{
+    height: 40px !important;
+    width: 110px !important;
+}
+
+
+ @media only screen and (max-width: 480px) {
+
+     .navbar img {
+         height: 40px !important;
+         width: 100px !important;
+     }
+     
+ }
+
+
+
+#header{
+    z-index:9000;
+    transition: all 0.15s linear;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-color: indigo;
+}
+#header.active {
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    position: fixed;
+    background: indigo;
+    top: 0px;
+    left: 0px;
+}
+
+.nav-link{
+    color: white !important;
+    font-family: Calibri;
+    font-size: 20px;
+    margin: 5px;
+}
+.nav-link:hover{
+    color: orange !important;
+}
+
+.dropdown-item:hover{
+    color: orange !important;
+}
+
+.menuIcon:focus{
+    outline: none;
+}
+#loginBtn{
+    background-color: rgba(1,1,1,0.0);
+    color:white;
+    font-family: Calibri;
+    font-size: 20px;
+    border: 1px solid white;
+}
+#loginBtn:hover{
+    color:orange;
+    border: 1px solid orange;
+}
+#loginBtn:focus{
+    outline: none;
+    box-shadow: none;
+}
+
+#signupBtn{
+    background-color: rgba(1,1,1,0.0);
+    color:white;
+    border: 1px solid white;
+    font-family: Calibri;
+    font-size: 20px;
+}
+#signupBtn:hover{
+    color: orange;
+    border: 1px solid orange;
+}
+#signupBtn:focus{
+    outline: none;
+    box-shadow: none;
+}
+
+
+
+
+
+
+
+
+
+
+    /**************************Footer section start*******************************/
+footer {
+    background-image: url("../../../static/public-section/imagesANDicons/footer_bg.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+footer a{
+	text-decoration: none;
+	color: white;
+}
+footer a:hover{
+		text-decoration: none;
+
+}
+.footer-top { padding: 60px 0; text-align: left; color: white; }
+.footer-top h3 { padding-bottom: 10px; color: #fff; }
+
+.footer-about img.logo-footer { max-width: 74px; margin-top: 0; margin-bottom: 18px; }
+.footer-about p a { border: 0; }
+.footer-about p a:hover, .footer-about p a:focus { border: 0; }
+
+.footer-contact p { word-wrap: break-word; }
+.footer-contact i { padding-right: 10px; font-size: 18px; color: white; }
+.footer-contact p a { border: 0; }
+.footer-contact p a:hover, .footer-contact p a:focus { border: 0; }
+
+.footer-links a { color: white; border: 0; }
+.footer-links a:hover, .footer-links a:focus { color: #fff; }
+
+.footer-bottom {
+    padding: 15px 0 17px 0; text-align: left; color: white;
+    background: rgb(86,44,158); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(86,44,158,1) 7%, rgba(48,41,147,1) 95%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(86,44,158,1) 7%,rgba(48,41,147,1) 95%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(86,44,158,1) 7%,rgba(48,41,147,1) 95%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#562c9e', endColorstr='#302993',GradientType=0 ); /* IE6-9 */
+
+}
+
+.footer-social { padding-top: 3px; text-align: right; }
+.footer-social a { margin-left: 20px; color: #777; border: 0; }
+.footer-social a:hover, .footer-social a:focus { color: #79a05f; border: 0; }
+.footer-social i { font-size: 24px; vertical-align: middle; color: white }
+
+.footer-copyright { padding-top: 5px; }
+.footer-copyright a { color: #fff; border: 0; }
+.footer-copyright a:hover, .footer-copyright a:focus { color: #aaa; border: 0; }
+#newsletterForm input{
+
+    border-radius:4px;
+}
+#newsletterForm input:focus{
+
+   box-shadow: none;
+    border: 1px solid orangered;
+}
+ #newsletterForm button{
+    border-radius:4px;
+     background-color: orange;
+     color: white;
+     border: none!important;
+}
+
+#newsletterForm button:hover{
+    border-radius:4px;
+    border: 1px solid orangered;
+     background-color: white;
+     color: orangered;
+}
+.playStoreImagesDiv h5{
+margin-top: 15px;
+}
+.playStoreImagesDiv img{
+    margin-top: 5px;
+   height: 35px;
+   width: 120px;
+}
+
+
+
+
+
+
+
+/*Arrow up*/
+.arrowUp{
+    width: 45px;
+    height: 50px;
+    border-radius: 6px;
+    color: white;
+    background-color: indigo;
+    position: fixed;
+    bottom: 2%;
+    right: 2%;
+    text-align: center;
+    font-size: 22px;
+    line-height: 50px;
+}
+.arrowUp:hover{
+    opacity: 0.9;
+}
+#myScrollUp{
+    text-decoration: none;
+    display: none;
+}
+
+

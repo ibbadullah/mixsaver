@@ -1,0 +1,1019 @@
+html{
+    scroll-behavior: smooth;
+}
+body {
+    width: 100%;
+    background-color:#F7F7F7;
+}
+
+
+body::-webkit-scrollbar {
+    width: 1em;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: floralwhite;
+    border-radius: 8px;
+
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: indigo;
+    border-radius: 8px;
+}
+
+/*Styles for navbar*/
+
+
+
+ .navbar img{
+    height: 40px !important;
+    width: 110px !important;
+
+}
+
+#header{
+    z-index:9000;
+    transition: all 0.15s linear;
+    background-color: rgba(2,3,4,0.0);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+}
+#header.active {
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    position: fixed;
+    background: indigo;
+    top: 0px;
+    left: 0px;
+}
+
+.nav-link{
+    color: white !important;
+    font-family: Calibri;
+    font-size: 20px;
+    margin: 5px;
+}
+.nav-link:hover{
+    color: orange !important;
+}
+
+.dropdown-item:hover{
+    color: orange !important;
+}
+
+.menuIcon:focus{
+    outline: none;
+}
+#loginBtn{
+    background-color: rgba(1,1,1,0.0);
+    color:white;
+    font-family: Calibri;
+    font-size: 20px;
+    border: 1px solid white;
+}
+#loginBtn:hover{
+    color:orange;
+    border: 1px solid orange;
+}
+#loginBtn:focus{
+    outline: none;
+    box-shadow: none;
+}
+
+#signupBtn{
+    background-color: rgba(1,1,1,0.0);
+    color:white;
+    border: 1px solid white;
+    font-family: Calibri;
+    font-size: 20px;
+}
+#signupBtn:hover{
+    color: orange;
+    border: 1px solid orange;
+}
+#signupBtn:focus{
+    outline: none;
+    box-shadow: none;
+}
+
+
+
+    /* start header section*/
+.header-section {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    -moz-overflow-x:hidden;
+    -o-overflow-x:hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background: url("../../../static/public-section/imagesANDicons/h1_hero.png");
+}
+
+
+
+.header-section h1{
+    margin-top: 230px !important;
+    font-size: 50px;
+    color: white;
+    font-family: Calibri;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.formDiv{
+    margin-top: 10px;
+    width: 70%;
+    margin-left: 15%;
+    padding: 15px;
+    background-color: rgba(2,2,2,0.2);
+    border-radius: 10px;
+    position: static;
+
+}
+.keywordDiv{
+    width: 53%;
+    float: left;
+}
+.keywordDiv .keyword{
+    width: 100%;
+    height: 60px;
+    padding: 5px;
+    font-family: Calibri;
+    font-size: 25px;
+    border-style: none;
+    outline: none;
+    border-radius: 8px;
+    padding-left: 10px;
+    color:grey;
+}
+.keyword:focus{
+    color: indigo;
+}
+.selectDiv{
+    width: 28%;
+    margin-left: 2%;
+    float: left;
+}
+.selectBrand {
+    height: 60px;
+    padding: 5px !important;
+    padding-right: 10px !important;
+    width: 100%;
+    border-radius: 8px;
+    font-family: Calibri;
+    font-size: 25px;
+    border-style: none;
+    outline: none;
+    box-sizing: border-box;
+    color:grey;
+}
+.selectBrand:focus{
+    box-shadow:none;
+    outline: none;
+    color: indigo;
+}
+
+
+
+.searchButtonDiv{
+    width: 15%;
+    margin-left: 2%;
+    float: left;
+}
+.searchButtonDiv .searchBtn{
+    height: 60px;
+    padding: 5px;
+    width: 100%;
+    border-radius: 8px;
+    color: white;
+    background-color: orange;
+    font-family: Calibri;
+    font-size: 25px;
+    border-style: none;
+    outline: none;
+    box-sizing: border-box;
+}
+.searchBtn:hover {
+    opacity: 0.9;
+}
+
+
+
+
+
+.three-benefits{
+    width: 100%;
+    color: white;
+    padding: 12px 2px 12px 2px;
+    bottom: 0px;
+    position: absolute;
+    background: rgb(86,44,158); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(86,44,158,1) 36%, rgba(48,41,147,1) 86%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(86,44,158,1) 36%,rgba(48,41,147,1) 86%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(86,44,158,1) 36%,rgba(48,41,147,1) 86%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#562c9e', endColorstr='#302993',GradientType=0 ); /* IE6-9 */
+
+}
+.three-benefits i{
+    font-size: 35px;
+    float: left;
+    margin-top: 0px!important;
+    margin-bottom: 0px!important;
+}
+
+.three-benefits h5{
+    margin-left: 10px!important;
+    float: left;
+    margin-top: 0px!important;
+    margin-bottom: 0px!important;
+}
+
+.three-benefits p{
+    float: left;
+    margin-top: 5px!important;
+    margin-bottom: 0px!important;
+    font-size: 18px;
+}
+
+
+
+
+
+
+
+
+
+
+/*Services section start*/
+.cardsContainer{
+    text-align: center;
+    margin-top: 50px;
+}
+.sectionTitle{
+    font-family: Calibri;
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+
+
+
+
+/*Services section end*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /**************************Total items start*******************************/
+.totalItems{
+margin-top: 50px;
+}
+.totalItems h4{
+    font-size: 1.4rem;
+    font-family: Calibri;
+    text-transform: uppercase;
+    font-weight:bold;
+
+}
+.counts{
+    font-size: 2.4rem;
+    font-family: Arial;
+    font-weight: bold;
+
+}
+
+    /**************************Total items end*******************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/***************************************Trusted brands start**************************************************/
+.trustedBrands{
+     margin-top: 50px;
+    background-color: white;
+    padding: 25px 10px 35px 10px;
+    margin-bottom: 40px;
+    -webkit-box-shadow: 0px 1px 5px 1px rgba(48,46,48,0.15);
+    -moz-box-shadow: 0px 1px 5px 1px rgba(48,46,48,0.15);
+    box-shadow: 0px 1px 5px 1px rgba(48,46,48,0.15);
+
+}
+
+.brandsDiv{
+    text-align: center;
+    align-content: center;
+
+}
+.brandsImage{
+    height: 80px;
+    width: 160px;
+    margin-top: 5px;
+    border-radius: 4px;
+    border: 1px solid gainsboro;
+}
+/***************************************Trusted brands end**************************************************/
+
+
+
+
+
+
+
+    /**************************Footer section start*******************************/
+footer {
+    background-image: url("../../../static/public-section/imagesANDicons/footer_bg.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+footer a{
+	text-decoration: none;
+	color: white;
+}
+footer a:hover{
+		text-decoration: none;
+
+}
+.footer-top { padding: 60px 0; text-align: left; color: white; }
+.footer-top h3 { padding-bottom: 10px; color: #fff; }
+
+.footer-about img.logo-footer { max-width: 74px; margin-top: 0; margin-bottom: 18px; }
+.footer-about p a { border: 0; }
+.footer-about p a:hover, .footer-about p a:focus { border: 0; }
+
+.footer-contact p { word-wrap: break-word; }
+.footer-contact i { padding-right: 10px; font-size: 18px; color: white; }
+.footer-contact p a { border: 0; }
+.footer-contact p a:hover, .footer-contact p a:focus { border: 0; }
+
+.footer-links a { color: white; border: 0; }
+.footer-links a:hover, .footer-links a:focus { color: #fff; }
+
+.footer-bottom {
+    padding: 15px 0 17px 0; text-align: left; color: white;
+    background: rgb(86,44,158); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(86,44,158,1) 7%, rgba(48,41,147,1) 95%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(86,44,158,1) 7%,rgba(48,41,147,1) 95%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(86,44,158,1) 7%,rgba(48,41,147,1) 95%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#562c9e', endColorstr='#302993',GradientType=0 ); /* IE6-9 */
+
+}
+
+.footer-social { padding-top: 3px; text-align: right; }
+.footer-social a { margin-left: 20px; color: #777; border: 0; }
+.footer-social a:hover, .footer-social a:focus { color: #79a05f; border: 0; }
+.footer-social i { font-size: 24px; vertical-align: middle; color: white }
+
+.footer-copyright { padding-top: 5px; }
+.footer-copyright a { color: #fff; border: 0; }
+.footer-copyright a:hover, .footer-copyright a:focus { color: #aaa; border: 0; }
+#newsletterForm input{
+
+    border-radius:4px;
+}
+#newsletterForm input:focus{
+
+   box-shadow: none;
+    border: 1px solid orangered;
+}
+ #newsletterForm button{
+    border-radius:4px;
+     background-color: orange;
+     color: white;
+     border: none!important;
+}
+
+#newsletterForm button:hover{
+    border-radius:4px;
+    border: 1px solid orangered;
+     background-color: white;
+     color: orangered;
+}
+.playStoreImagesDiv h5{
+margin-top: 15px;
+}
+.playStoreImagesDiv img{
+    margin-top: 5px;
+   height: 35px;
+   width: 120px;
+}
+
+
+
+
+
+
+
+/*Arrow up*/
+.arrowUp{
+    width: 45px;
+    height: 50px;
+    border-radius: 6px;
+    color: white;
+    background-color: indigo;
+    position: fixed;
+    bottom: 2%;
+    right: 2%;
+    text-align: center;
+    font-size: 22px;
+    line-height: 50px;
+}
+.arrowUp:hover{
+    opacity: 0.9;
+}
+#myScrollUp{
+    text-decoration: none;
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+/* Cards horizontal start */
+
+      * { box-sizing: border-box; }
+
+
+        .carousel {
+
+         }
+
+
+
+    /*Custom cards styling end*/
+
+    .carousel-cell{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-right: 10px;
+        width: 200px;
+        height: 290px;
+        border-radius: 8px;
+        background-color: white;
+        overflow: hidden;
+        position: relative;
+        border: 1px solid gainsboro;
+        -webkit-box-shadow: 0px 0px 10px -5px rgba(0,0,0,0.66);
+        -moz-box-shadow: 0px 0px 10px -5px rgba(0,0,0,0.66);
+        box-shadow: 0px 0px 10px -5px rgba(0,0,0,0.66);
+
+    }
+    .carousel-cell:hover{
+        transition: 0.5s;
+        -webkit-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.66);
+        -moz-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.66);
+        box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.66);
+    }
+
+     .productImgDiv{
+         width: 200px;
+         height: 180px;
+         border-bottom: 1px dashed grey;
+         position: absolute;
+     }
+     .productImgDiv img{
+         width: 200px;
+         height: 170px;
+         margin-top: 0px;
+     }
+     .badge{
+         background-color: orangered;
+         color: white;
+         width: 130px;
+         height: 30px;
+         text-align: center;
+         font-family: Calibri;
+         font-size: 15px;
+         line-height: 20px;
+         position: absolute;
+         top: 15px;
+         left: -35px;
+         float: left;
+         transform: rotate(-45deg);
+     }
+     .titleAndCateg {
+         width: 200px;
+         height: 36px;
+         position: absolute;
+         margin-top: 187px;
+     }
+     .titleAndCateg a{
+         text-decoration: none;
+     }
+
+     .titleAndCateg h4 {
+         font-size: 17px;
+         margin-left: 10px;
+         margin-right: 10px;
+         margin-bottom: 0px;
+         line-height: 17px;
+         color: darkslategrey;
+         font-family: Calibri;
+         font-weight: bold;
+         overflow: hidden;
+     }
+
+     .titleAndCateg h4:hover{
+         color: indigo;
+     }
+     .categeory {
+         font-family: Calibri;
+         font-size: 16px;
+         color: green;
+         margin-top: 3px;
+         text-align: center;
+         margin-bottom: 0px;
+     }
+
+     .ratingDiv{
+         margin-top: 228px;
+         width: 200px;
+         float: left;
+         position: absolute;
+         height: 30px;
+     }
+
+      .ratingP {
+         margin-left: 10px;
+         font-size: 17px;
+         font-weight: bold;
+         color: #434f46;
+         float: left;
+          line-height: 30px;
+     }
+
+     .ratingImage{
+         width: 90px;
+         height: 30px;
+         float: left;
+         margin-left: 3px;
+         margin-top: 0px;
+     }
+
+     .totalRatings {
+         float: left;
+         margin-left: 3px;
+         height: 30px;
+         line-height: 30px;
+         font-family: Calibri;
+         color: grey;
+         font-size: 14px;
+     }
+
+
+
+
+    .pricingDiv{
+        width: 200px;
+        height: 22px;
+        margin-top: 233px;
+        position: absolute;
+    }
+    .pricingDiv .realPrice{
+        text-align: right;
+        float: right;
+        margin-right: 10px;
+        font-size: 22px;
+        color: #434f46;
+        line-height: 22px;
+        font-family: Calibri;
+        font-weight: bold;
+
+
+    }
+     .pricingDiv .displayPrice{
+         text-align: left;
+         float: left;
+         margin-left: 10px;
+         font-size: 18px;
+         font-family: Calibri;
+         text-decoration: line-through;
+         color: grey;
+         line-height: 22px;
+     }
+     .discountSpan {
+         background-color: #265182;
+         color: white;
+         width: 45px;
+         height: 22px;
+         text-align: center;
+         border-radius: 3px;
+         font-family: Calibri;
+         font-size: 17px;
+         float: left;
+         margin-left: 8px;
+         line-height: 22px;
+     }
+
+     .back-cover{
+         position: absolute;
+         background-color: orange;
+         opacity: 0.9;
+         width: 200px;
+         height: 290px;
+         z-index: 1;
+         top: 0;
+         left: 0;
+         display: none;
+     }
+
+     .carousel-cell:hover .back-cover{
+         display: block;
+         transition: 0.6s;
+         text-align: center;
+     }
+
+     .back-cover-body{
+         margin-top: 101px;
+         width: 200px;
+         height: 88px;
+     }
+
+     .couponBtn{
+         background-color: indigo;
+         color: white;
+         width: 130px;
+     }
+
+     .couponBtn:hover{
+         color: white;
+         background-color: #09084a;
+
+     }
+     .detailsBtn{
+         width: 130px;
+         background-color: #b007a8;
+         color: white;
+     }
+     .detailsBtn:hover{
+         background-color: #850382;
+         color: white;
+     }
+     /*Custom cards styling end*/
+
+
+
+
+
+
+        .carousel-cell.is-selected {
+            border: none;
+        }
+
+        /* cell number */
+        .carousel-cell:before {
+          display: block;
+        }
+
+        .flickity-page-dots{
+            display: none;
+        }
+
+                /* big previous & next buttons */
+        .flickity-prev-next-button {
+            background-color: indigo !important;
+        }
+        /* icon color */
+        .flickity-button-icon {
+            fill: white !important;
+        }
+        /* hide disabled button */
+        .flickity-button:disabled {
+            display: none;
+        }
+        .flickity-button:hover{
+            background-color: #232466 !important;
+
+        }
+        .flickity-prev-next-button:hover{
+            background-color: #232466;
+        }
+
+
+        .exploreMore{
+            background-color: #232466;
+            padding: 0px 8px 0px 8px;
+            text-align: center;
+        }
+        .exploreMore a{
+            font-family: Calibri;
+            font-size: 26px;
+            line-height: 290px;
+            text-decoration: none;
+            font-weight: bold;
+            color: white;
+            border-radius: 0px !important;
+        }
+
+        .exploreMore a:hover{
+            color: #ded7de;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+/*Targeting specific header search form for tablets*/
+
+@media only screen and (max-width: 983px) {
+
+    .header-section h1{
+        margin-top: 100px;
+        font-size: 35px;
+        color: white;
+        font-family: Calibri;
+        width: 100%;
+        margin-left: 10%;
+        margin-right: 10%;
+        text-align: center;
+    }
+
+    .formDiv{
+        margin-top: 10px;
+        width: 80%;
+        margin-left: 10%;
+        background-color: rgba(2,2,2,0.2);
+        border-radius: 10px;
+        text-align: center;
+        padding: 30px;
+
+    }
+    .keywordDiv{
+        width: 100%;
+    }
+    .keywordDiv .keyword{
+        width: 100%;
+        height: 50px;
+        padding: 5px;
+        font-family: Calibri;
+        font-size: 25px;
+        border-style: none;
+        outline: none;
+        border-radius: 8px;
+        padding-left: 10px;
+    }
+    .selectDiv{
+        width: 100%;
+        margin-top: 20px;
+        margin-left: 0%;
+    }
+    .selectBrand {
+        height: 50px;
+        width: 100%;
+        border-radius: 8px;
+        font-family: Calibri;
+        font-size: 25px;
+        border-style: none;
+        outline: none;
+        box-sizing: border-box;
+    }
+
+
+    .searchButtonDiv{
+        width: 100%;
+        margin-top: 20px;
+        margin-left: 0%;
+    }
+    .searchButtonDiv .searchBtn{
+        height: 50px;
+        width: 100%;
+        border-radius: 8px;
+        color: white;
+        background-color: orange;
+        font-family: Calibri;
+        font-size: 25px;
+        border-style: none;
+        outline: none;
+        box-sizing: border-box;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+ /*Targeting different screens*/
+ @media only screen and (max-width: 1140px) {
+ .three-benefits i{
+    display: none;
+}
+.three-benefits h5{
+    margin-left: 0px!important;
+    float: none;
+    margin-top: 0px!important;
+    margin-bottom: 0px!important;
+    text-align: center;
+}
+.three-benefits p{
+    float: none;
+    margin-top: -18px!important;
+    text-align: center;
+    font-size: 18px;
+}
+ }
+
+ @media only screen and (max-width: 751px) {
+ .three-benefits{
+    display: none;
+}
+ .footer-copyright{
+     text-align: center;
+     margin-bottom: 10px;
+ }
+ .footer-social{
+     text-align: center;
+ }
+ }
+
+
+ /*######## Specific mobile screens start #########*/
+ @media only screen and (max-width: 480px) {
+
+     .navbar img{
+         height: 40px;
+         margin-left: -10px;
+         width: 100px !important;
+}
+     .navbar i{
+         margin-right: -20px;
+     }
+     
+     
+     
+     
+      .header-section h1{
+        margin-top: 120px !important;
+        font-size: 30px;
+        color: white;
+        font-family: Calibri;
+        width: 100%;
+        margin-left: 5%;
+        margin-right: 5%;
+        text-align: center;
+       
+    }
+
+    .formDiv{
+        margin-top: 10px;
+        width: 90%;
+        margin-left: 5%;
+        background-color: rgba(2,2,2,0.2);
+        border-radius: 10px;
+        text-align: center;
+        padding: 25px;
+
+    }
+    .keywordDiv{
+        width: 100%;
+    }
+    .keywordDiv .keyword{
+        width: 100%;
+        height: 50px;
+        padding: 5px;
+        font-family: Calibri;
+        font-size: 25px;
+        border-style: none;
+        outline: none;
+        border-radius: 8px;
+        padding-left: 10px;
+    }
+    .selectDiv{
+        width: 100%;
+        margin-top: 20px;
+        margin-left: 0%;
+    }
+    .selectBrand {
+        height: 50px;
+        width: 100%;
+        border-radius: 8px;
+        font-family: Calibri;
+        font-size: 25px;
+        border-style: none;
+        outline: none;
+        box-sizing: border-box;
+    }
+
+
+    .searchButtonDiv{
+        width: 100%;
+        margin-top: 20px;
+        margin-left: 0%;
+    }
+    .searchButtonDiv .searchBtn{
+        height: 50px;
+        width: 100%;
+        border-radius: 8px;
+        color: white;
+        background-color: orange;
+        font-family: Calibri;
+        font-size: 25px;
+        border-style: none;
+        outline: none;
+        box-sizing: border-box;
+    }
+     
+     
+     
+     
+     
+
+
+/*Start counting total services section*/
+.counterDiv{
+    display: inline-block;
+    padding: 8px 2px 8px 2px;
+}
+.counterDiv h4{
+    font-size: 1.3rem;
+    font-weight: normal;
+}
+.counts{
+    font-size: 1.9rem;
+}
+/*End counting total services section*/
+
+
+
+
+
+/*Brands div start*/
+.brandsImage{
+    height: 70px;
+    width: 120px;
+    margin: 5px 4px 5px 4px;
+    border-radius: 4px;
+    border: 1px solid gainsboro;
+}
+
+
+/*Brands div end*/
+
+
+
+
+/*Some gobal styling on different tags*/
+.sectionTitle {
+    font-size: 32px;
+    font-weight: 600;
+}
+ .footersectionTitle{
+     font-size: 22px;
+ }
+
+
+
+ /* Applying border on selected card */
+ .carousel-cell.is-selected {
+            border: 1px solid indigo;
+        }
+
+ }
+  /*######## Specific mobile screens end #########*/
